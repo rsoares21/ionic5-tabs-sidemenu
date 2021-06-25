@@ -7,4 +7,22 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   constructor() {}
+
+  pages = [
+    {
+      title: 'Login',
+      url: '/tabs/tab1',
+      icon: 'log-in'
+    },
+    {
+      title: 'Contact',
+      url: '/tabs/tab2',
+      icon: 'person'
+    },
+    {
+      title: 'About',
+      url: '/tabs/tab3',
+      icon: 'information-circle'
+    }
+  ];
 }
