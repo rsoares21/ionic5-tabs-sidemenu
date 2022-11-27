@@ -12,8 +12,6 @@ export class LoginPage implements OnInit {
   constructor(public menu: MenuController, private router: Router) {
     this.menu.enable(false);
     this.menu.swipeGesture(false);
-
-    this.router.navigate(['/signup']);
   }
 
   ionViewWillLeave() {
@@ -21,7 +19,6 @@ export class LoginPage implements OnInit {
     this.menu.swipeGesture(true);
   }
   ngOnInit() {
-
   }
 
 }

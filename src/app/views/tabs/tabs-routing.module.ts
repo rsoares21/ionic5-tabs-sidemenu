@@ -23,7 +23,6 @@ const routes: Routes = [
         path: 'garage',
         loadChildren: () => import('./garage/garage.module').then(m => m.GaragePageModule)
       },
-
       {
         path: 'office',
         loadChildren: () => import('./office/office.module').then(m => m.OfficePageModule)
@@ -46,7 +45,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/login', //default route
     pathMatch: 'full'
   },
   {

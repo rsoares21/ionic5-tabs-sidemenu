@@ -9,17 +9,17 @@ export class AppComponent {
 
   pages = [
     {
-      title: 'Login',
+      title: 'Logout',
       url: '/tabs/tab1',
       icon: 'log-in'
     },
     {
-      title: 'Contact',
+      title: 'About',
       url: '/tabs/tab2',
       icon: 'person'
     },
     {
-      title: 'About',
+      title: 'Game wiki',
       url: '/tabs/tab3',
       icon: 'information-circle'
     }
