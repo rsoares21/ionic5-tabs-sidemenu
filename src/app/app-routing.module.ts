@@ -5,12 +5,12 @@ const routes: Routes = [
   {
     path: '',
     children: [
-      {
+      /*{
         path: '',
         loadChildren: () => import('./views/tabs/tabs.module').then(m => m.TabsPageModule)
-      },
+      },*/
       {
-        path: 'login',
+        path: '',
         loadChildren: () => import('./views/login/login.module').then(m => m.LoginPageModule)
       },
       {

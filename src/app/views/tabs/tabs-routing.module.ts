@@ -20,6 +20,24 @@ const routes: Routes = [
         loadChildren: () => import('./tab3/tab3.module').then(m => m.Tab3PageModule)
       },
       {
+        path: 'garage',
+        loadChildren: () => import('./garage/garage.module').then(m => m.GaragePageModule)
+      },
+
+      {
+        path: 'office',
+        loadChildren: () => import('./office/office.module').then(m => m.OfficePageModule)
+      },
+      {
+        path: 'shop',
+        loadChildren: () => import('./shop/shop.module').then(m => m.ShopPageModule)
+      },
+      {
+        path: 'exchange',
+        loadChildren: () => import('./exchange/exchange.module').then(m => m.ExchangePageModule)
+      },
+
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'
@@ -30,6 +48,18 @@ const routes: Routes = [
     path: '',
     redirectTo: '/tabs/tab1',
     pathMatch: 'full'
+  },
+  {
+    path: 'office',
+    loadChildren: () => import('./office/office.module').then( m => m.OfficePageModule)
+  },
+  {
+    path: 'shop',
+    loadChildren: () => import('./shop/shop.module').then( m => m.ShopPageModule)
+  },
+  {
+    path: 'exchange',
+    loadChildren: () => import('./exchange/exchange.module').then( m => m.ExchangePageModule)
   }
 ];
 

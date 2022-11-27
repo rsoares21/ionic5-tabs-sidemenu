@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
+import { Router } from "@angular/router"
 
 @Component({
   selector: 'app-login',
@@ -8,9 +9,11 @@ import { MenuController } from '@ionic/angular';
 })
 export class LoginPage implements OnInit {
 
-  constructor(public menu: MenuController) {
+  constructor(public menu: MenuController, private router: Router) {
     this.menu.enable(false);
     this.menu.swipeGesture(false);
+
+    this.router.navigate(['/signup']);
   }
 
   ionViewWillLeave() {
@@ -18,6 +21,7 @@ export class LoginPage implements OnInit {
     this.menu.swipeGesture(true);
   }
   ngOnInit() {
+
   }
 
 }
