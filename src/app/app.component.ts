@@ -35,8 +35,11 @@ export class AppComponent {
 
     this.playerData = JSON.parse(sessionStorage.getItem('pdata'));
 
-    this.playerAccount = JSON.stringify(this.playerData.account.actor)
-    this.playerAccount = this.playerAccount.replace("\"", "").replace("\"", "")
+    if (this.playerData != null) {
+      this.playerAccount = JSON.stringify(this.playerData.account.actor)
+      this.playerAccount = this.playerAccount.replace("\"", "").replace("\"", "")
+  
+    }
 
   }
 }
