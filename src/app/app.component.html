@@ -4,7 +4,7 @@
             <ion-content>
                 <ion-list>
                     <ion-list-header>Inbox</ion-list-header>
-                    <ion-note>hi@ionicframework.com</ion-note>
+                    <ion-note>{{playerAccount}}</ion-note>
 
                     <ion-menu-toggle name="desktop" autoHide="false" *ngFor="let p of pages">
                         <ion-item [routerLink]="[p.url]" routerLinkActive="selected" routerDirection="root" lines="none" detail="false">

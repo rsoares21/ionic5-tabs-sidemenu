@@ -29,14 +29,14 @@ export class AppComponent {
       icon: 'information-circle'
     }
   ];
-  constructor() { 
+  playerData;
+  playerAccount;
+  constructor() {
 
-      const players = [
-        { id:1, account: 'rizzlesizzle', balance_trophy:100, balance_tyres: 50}
-      ]
+    this.playerData = JSON.parse(sessionStorage.getItem('pdata'));
 
-    
-        sessionStorage.setItem('isLoggedIn', JSON.stringify(players)); 
+    this.playerAccount = JSON.stringify(this.playerData.account.actor)
+    this.playerAccount = this.playerAccount.replace("\"", "").replace("\"", "")
 
   }
 }

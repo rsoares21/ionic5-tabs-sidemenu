@@ -49,6 +49,10 @@ export class LoginPage implements OnInit {
     // Save the session within your application for future use
     const { session } = identity;
     sessionStorage.setItem('isLoggedIn', "true"); 
+    
+    let pdata = { id:1, account: session.auth, balance_trophy:100, balance_tyres: 50}
+
+    sessionStorage.setItem('pdata', JSON.stringify(pdata)); 
 
     console.log(`Logged in as ${session.auth}`);
     window.location.reload();
