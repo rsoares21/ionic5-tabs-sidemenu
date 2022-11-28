@@ -53,10 +53,6 @@ const routes: Routes = [
     loadChildren: () => import('./office/office.module').then( m => m.OfficePageModule)
   },
   {
-    path: 'shop',
-    loadChildren: () => import('./shop/shop.module').then( m => m.ShopPageModule)
-  },
-  {
     path: 'exchange',
     loadChildren: () => import('./exchange/exchange.module').then( m => m.ExchangePageModule)
   }

@@ -12,7 +12,7 @@ export class GaragePage implements OnInit {
 
   ngOnInit() {
 
-    let isLoggedIn = sessionStorage.getItem('isLoggedIn') == "true";
+    let isLoggedIn = sessionStorage.getItem('isLoggedIn') != null
     if (!isLoggedIn) this.router.navigate(['/login'])
 
   }

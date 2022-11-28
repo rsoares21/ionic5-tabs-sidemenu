@@ -10,9 +10,14 @@ export class AppComponent {
   pages = [
     {
       title: 'Logout',
-      url: '/tabs/tab1',
+      url: '/logout',
       icon: 'log-out'
     },
+    /*{
+      title: 'Login',
+      url: '/tabs/tab1',
+      icon: 'log-in'
+    },*/
     {
       title: 'About',
       url: '/tabs/tab2',
@@ -24,5 +29,14 @@ export class AppComponent {
       icon: 'information-circle'
     }
   ];
-  constructor() { }
+  constructor() { 
+
+      const players = [
+        { id:1, account: 'rizzlesizzle', balance_trophy:100, balance_tyres: 50}
+      ]
+
+    
+        sessionStorage.setItem('isLoggedIn', JSON.stringify(players)); 
+
+  }
 }

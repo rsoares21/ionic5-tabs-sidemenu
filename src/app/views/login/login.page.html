@@ -6,8 +6,10 @@
 
 <ion-content>
 
-    <ion-button (click)="loginWithAnchor()" *ngIf="!isLoggedIn">Anchor</ion-button>
-
+    <br><br><br>
+    <div style="display: flex; justify-content: center;">
+        <ion-button (click)="loginWithAnchor()" *ngIf="!isLoggedIn">Anchor</ion-button>
+    </div>
 
     <ion-button [routerLink]="['/tabs/garage']" *ngIf="isLoggedIn">To garage</ion-button>
 </ion-content>
