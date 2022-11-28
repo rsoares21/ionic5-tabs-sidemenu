@@ -1,10 +1,13 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Login</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>Login</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
-  <ion-button [routerLink]="['/tabs']">to tabs</ion-button>
+    <ion-button (click)="loginWithAnchor()" *ngIf="!isLoggedIn">Anchor</ion-button>
+
+
+    <ion-button [routerLink]="['/tabs/garage']" *ngIf="isLoggedIn">To garage</ion-button>
 </ion-content>

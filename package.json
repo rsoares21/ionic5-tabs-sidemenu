@@ -21,6 +21,8 @@
     "@angular/router": "~12.0.1",
     "@capacitor/core": "3.0.2",
     "@ionic/angular": "^5.5.2",
+    "anchor-link": "^3.5.1",
+    "anchor-link-browser-transport": "^3.5.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"

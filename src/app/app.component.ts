@@ -11,7 +11,7 @@ export class AppComponent {
     {
       title: 'Logout',
       url: '/tabs/tab1',
-      icon: 'log-in'
+      icon: 'log-out'
     },
     {
       title: 'About',

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-office',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OfficePage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+
+    let isLoggedIn = sessionStorage.getItem('isLoggedIn') == "true";
+    if (!isLoggedIn) this.router.navigate(['/login'])
+
   }
 
 }
