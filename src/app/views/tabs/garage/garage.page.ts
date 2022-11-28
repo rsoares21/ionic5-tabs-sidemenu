@@ -28,6 +28,7 @@ export class GaragePage implements OnInit {
     this.playerAccount = this.playerAccount.replace("\"","").replace("\"","")
     
     console.log('player_data:'+JSON.stringify(this.playerData))
+    
 
   }
 
