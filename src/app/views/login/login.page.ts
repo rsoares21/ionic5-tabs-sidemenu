@@ -25,7 +25,9 @@ export class LoginPage implements OnInit {
 
     let isLoggedIn = sessionStorage.getItem('isLoggedIn') != null;
 
-    if (isLoggedIn) this.router.navigate(['/tabs/garage'])
+    //if (isLoggedIn) this.router.navigate(['/tabs/garage'])
+    if (isLoggedIn) this.router.navigate(['/logintransition'])
+    
 
   }
 
@@ -48,11 +50,11 @@ export class LoginPage implements OnInit {
 
     // Save the session within your application for future use
     const { session } = identity;
-    sessionStorage.setItem('isLoggedIn', "true"); 
-    
-    let pdata = { id:1, account: session.auth, balance_trophy:100, balance_tyres: 50}
+    sessionStorage.setItem('isLoggedIn', "true");
 
-    sessionStorage.setItem('pdata', JSON.stringify(pdata)); 
+    let pdata = { id: 1, account: session.auth, balance_trophy: 100, balance_tyres: 50 }
+
+    sessionStorage.setItem('pdata', JSON.stringify(pdata));
 
     console.log(`Logged in as ${session.auth}`);
     window.location.reload();

@@ -24,7 +24,6 @@ export class GaragePage implements OnInit {
     console.log(JSON.stringify('isLoggedIn:'+isLoggedIn))
 
     this.playerData = JSON.parse(sessionStorage.getItem('pdata')); 
-
     this.playerAccount = JSON.stringify(this.playerData.account.actor)
     this.playerAccount = this.playerAccount.replace("\"","").replace("\"","")
     

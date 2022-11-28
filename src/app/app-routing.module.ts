@@ -23,6 +23,10 @@ const routes: Routes = [
     path: 'logout',
     loadChildren: () => import('./views/logout/logout.module').then( m => m.LogoutPageModule)
   },
+  {
+    path: 'logintransition',
+    loadChildren: () => import('./transitions/logintransition/logintransition.module').then( m => m.LogintransitionPageModule)
+  },
 ];
 @NgModule({
   imports: [
