@@ -15,6 +15,11 @@ export class LoginPage implements OnInit {
   constructor(public menu: MenuController, private router: Router) {
     this.menu.enable(false);
     this.menu.swipeGesture(false);
+
+    sessionStorage.removeItem('isLoggedIn');
+    sessionStorage.removeItem('pdata');
+    let isLoggedIn = sessionStorage.getItem('isLoggedIn') != null
+
   }
 
   ionViewWillLeave() {
@@ -23,10 +28,10 @@ export class LoginPage implements OnInit {
   }
   ngOnInit() {
 
-    let isLoggedIn = sessionStorage.getItem('isLoggedIn') != null;
+    //let isLoggedIn = sessionStorage.getItem('isLoggedIn') != null;
 
     //if (isLoggedIn) this.router.navigate(['/tabs/garage'])
-    if (isLoggedIn) this.router.navigate(['/logintransition'])
+    //if (isLoggedIn) this.router.navigate(['/logintransition'])
     
 
   }
@@ -57,7 +62,9 @@ export class LoginPage implements OnInit {
     sessionStorage.setItem('pdata', JSON.stringify(pdata));
 
     console.log(`Logged in as ${session.auth}`);
-    window.location.reload();
+    let isLoggedIn = sessionStorage.getItem('isLoggedIn') != null;
+    if (isLoggedIn) this.router.navigate(['/logintransition'])
+    
   }
 
 

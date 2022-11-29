@@ -9,11 +9,17 @@
     <div class="bg"></div>
     <div class="bg bg2"></div>
     <div class="bg bg3"></div>
+    <br><br><br><br><br><br><br>
+    <div style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+        <center>
+            <h1>Login using <span style="color: gold;"><b>WAX</b></span> account and play <span style="color: goldenrod;"><b>WaxGT Online</b></span></h1>
+        </center>
+
+    </div>
+
     <br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br>
-    <div style="display: flex; justify-content: center; vertical-align: ">
-        <ion-button (click)="loginWithAnchor()" *ngIf="!isLoggedIn" color="warning">Anchor Login</ion-button>
+    <div style="display: flex; justify-content: center; ">
+        <ion-button (click)="loginWithAnchor()" *ngIf="!isLoggedIn" color="warning">Anchor Wallet Login</ion-button>
     </div>
 
     <ion-button [routerLink]="['/tabs/garage']" *ngIf="isLoggedIn">To garage</ion-button>

@@ -13,11 +13,22 @@ export class GaragePage implements OnInit {
   playerAccount;
   constructor(private router: Router) {
 
+    let isLoggedIn = sessionStorage.getItem('isLoggedIn') != null
+    if (!isLoggedIn) this.router.navigate(['/login'])
+
+  }
+
+  carlights() {
+
+    //alert('lights')
+    let garagecar1_image = document.getElementById('garagecar1').innerHTML
+    if ((garagecar1_image).toString().indexOf('_lon') > -1)
+      document.getElementById('garagecar1').innerHTML = '<img src="../../../../assets/nytaxicab.jfif" width="120px">'
+    else
+      document.getElementById('garagecar1').innerHTML = '<img src="../../../../assets/nytaxicab_lon.png" width="120px">'
   }
 
   ngOnInit() {
-
-
 
     let isLoggedIn = sessionStorage.getItem('isLoggedIn') != null
     if (!isLoggedIn) this.router.navigate(['/login'])

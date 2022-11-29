@@ -15,7 +15,7 @@ export class LogintransitionPage implements OnInit {
 
 async doTransition() {
 
-  await new Promise(r => setTimeout(r, 3500));
+  await new Promise(r => setTimeout(r, 1500));
   
   let isLoggedIn = sessionStorage.getItem('isLoggedIn') != null
   if (isLoggedIn) this.router.navigate(['/tabs/garage'])
