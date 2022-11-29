@@ -18,6 +18,12 @@ export class GaragePage implements OnInit {
 
   }
 
+  repairCar() {
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:dimgray"></span><span style="color:darkred">▓</span>'
+    
+
+  }
+
   carlights() {
 
     //alert('lights')
@@ -27,6 +33,17 @@ export class GaragePage implements OnInit {
     else
       document.getElementById('garagecar1').innerHTML = '<img src="../../../../assets/nytaxicab_lon.png" width="120px">'
   }
+
+  startRace() {
+
+    //alert('lights')
+    let garagecar1_image = document.getElementById('garagecar1').innerHTML
+    if ((garagecar1_image).toString().indexOf('_lon') > -1)
+      document.getElementById('garagecar1').innerHTML = '<img src="../../../../assets/nytaxicab.jfif" width="120px">'
+    else
+      document.getElementById('garagecar1').innerHTML = '<img src="../../../../assets/nytaxicab_lon.png" width="120px">'
+  }
+
 
   ngOnInit() {
 
