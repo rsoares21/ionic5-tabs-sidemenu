@@ -13,6 +13,7 @@ export class GaragePage implements OnInit {
   playerAccount;
   startRaceButtonCollor = 'lime';
   repairButtonCollor = 'orange-black';
+  equipButtonCollor =  'orange-black'
   constructor(private router: Router) {
 
     let isLoggedIn = sessionStorage.getItem('isLoggedIn') != null
@@ -21,43 +22,43 @@ export class GaragePage implements OnInit {
   }
 
   async repairCar() {
+    let pausedelay = 1500
     document.getElementById('carstatus').innerHTML = 'Repairing'
     document.getElementById('carstatus').style.color = 'yellow'
 
     this.repairButtonCollor = 'medium'
     this.startRaceButtonCollor = 'medium'
     document.getElementById('carconditiontitle').style.color = 'lime'
-    await new Promise(r => setTimeout(r, 500));
-    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓</span><span style="color:dimgray">▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:darkred">▓</span>'
-    await new Promise(r => setTimeout(r, 500));
-    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓</span><span style="color:dimgray">▓▓▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:darkred">▓</span>'
-    await new Promise(r => setTimeout(r, 500));
-    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓</span><span style="color:dimgray">▓▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:darkred">▓</span>'
-    await new Promise(r => setTimeout(r, 500));
-    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓</span><span style="color:dimgray">▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:darkred">▓</span>'
-    await new Promise(r => setTimeout(r, 500));
-    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓</span><span style="color:dimgray">▓▓▓▓▓▓▓▓▓▓</span><span style="color:darkred">▓</span>'
-    await new Promise(r => setTimeout(r, 500));
-    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓</span><span style="color:dimgray">▓▓▓▓▓▓▓▓▓</span><span style="color:darkred">▓</span>'
-    await new Promise(r => setTimeout(r, 500));
-    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓</span><span style="color:dimgray">▓▓▓▓▓▓▓▓</span><span style="color:darkred">▓</span>'
-    await new Promise(r => setTimeout(r, 500));
-    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓▓</span><span style="color:dimgray">▓▓▓▓▓▓▓</span><span style="color:darkred">▓</span>'
-    await new Promise(r => setTimeout(r, 500));
-    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓▓▓</span><span style="color:dimgray">▓▓▓▓▓▓</span><span style="color:darkred">▓</span>'
-    await new Promise(r => setTimeout(r, 500));
-    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓▓▓▓</span><span style="color:dimgray">▓▓▓▓▓</span><span style="color:darkred">▓</span>'
-    await new Promise(r => setTimeout(r, 500));
-    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:dimgray">▓▓▓▓</span><span style="color:darkred">▓</span>'
-    await new Promise(r => setTimeout(r, 500));
-    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:dimgray">▓▓▓</span><span style="color:darkred">▓</span>'
-    await new Promise(r => setTimeout(r, 500));
-    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:dimgray">▓▓</span><span style="color:darkred">▓</span>'
-    await new Promise(r => setTimeout(r, 500));
-    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:dimgray">▓</span><span style="color:darkred">▓</span>'
-    await new Promise(r => setTimeout(r, 500));
-    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:dimgray"></span><span style="color:darkred">▓</span>'
-    
+    await new Promise(r => setTimeout(r, pausedelay));
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓</span><span style="color:dimgray">▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:darkred">▓</span>'
+    await new Promise(r => setTimeout(r, pausedelay));
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓</span><span style="color:dimgray">▓▓▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:darkred">▓</span>'
+    await new Promise(r => setTimeout(r, pausedelay));
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓</span><span style="color:dimgray">▓▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:darkred">▓</span>'
+    await new Promise(r => setTimeout(r, pausedelay));
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓</span><span style="color:dimgray">▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:darkred">▓</span>'
+    await new Promise(r => setTimeout(r, pausedelay));
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓</span><span style="color:dimgray">▓▓▓▓▓▓▓▓▓▓</span><span style="color:darkred">▓</span>'
+    await new Promise(r => setTimeout(r, pausedelay));
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓</span><span style="color:dimgray">▓▓▓▓▓▓▓▓▓</span><span style="color:darkred">▓</span>'
+    await new Promise(r => setTimeout(r, pausedelay));
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓▓</span><span style="color:dimgray">▓▓▓▓▓▓▓▓</span><span style="color:darkred">▓</span>'
+    await new Promise(r => setTimeout(r, pausedelay));
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓▓▓</span><span style="color:dimgray">▓▓▓▓▓▓▓</span><span style="color:darkred">▓</span>'
+    await new Promise(r => setTimeout(r, pausedelay));
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓▓▓▓</span><span style="color:dimgray">▓▓▓▓▓▓</span><span style="color:darkred">▓</span>'
+    await new Promise(r => setTimeout(r, pausedelay));
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:dimgray">▓▓▓▓▓</span><span style="color:darkred">▓</span>'
+    await new Promise(r => setTimeout(r, pausedelay));
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:dimgray">▓▓▓▓</span><span style="color:darkred">▓</span>'
+    await new Promise(r => setTimeout(r, pausedelay));
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:dimgray">▓▓▓</span><span style="color:darkred">▓</span>'
+    await new Promise(r => setTimeout(r, pausedelay));
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:dimgray">▓▓</span><span style="color:darkred">▓</span>'
+    await new Promise(r => setTimeout(r, pausedelay));
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:dimgray">▓</span><span style="color:darkred">▓</span>'
+    await new Promise(r => setTimeout(r, pausedelay));
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:dimgray"></span><span style="color:darkred">▓</span>'
 
 
 
@@ -66,7 +67,7 @@ export class GaragePage implements OnInit {
     document.getElementById('carstatus').style.color = 'firebrick'
 
 
-    document.getElementById('carconditiontitle').style.color = 'whitesmoke'
+    document.getElementById('carconditiontitle').style.color = 'darkgrey'
     this.repairButtonCollor = 'orange-black'
     this.startRaceButtonCollor = 'lime'
   }
@@ -85,6 +86,7 @@ export class GaragePage implements OnInit {
 
     this.startRaceButtonCollor = 'medium'
     this.repairButtonCollor = 'medium'
+    this.equipButtonCollor =  'medium'
 
     document.getElementById('carstatus').style.color = 'lime'
 
@@ -94,14 +96,27 @@ export class GaragePage implements OnInit {
     }
     
 
-    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:dimgray">▓</span><span style="color:darkred">▓</span>'
-    
     document.getElementById('instantracelog').style.color = 'color:black'
     document.getElementById('instantracelog').innerHTML = '<b>You placed 3rd!</b>'
     document.getElementById('carstatus').innerHTML = 'Returning to garage'
     document.getElementById('carstatus').style.color = 'yellow'
 
-    await new Promise(r => setTimeout(r, 6000));
+    await new Promise(r => setTimeout(r, 1000));
+
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:greenyellow">▓</span><span style="color:darkred">▓</span>'
+    await new Promise(r => setTimeout(r, 500));
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:dimgray">▓</span><span style="color:darkred">▓</span>'
+    await new Promise(r => setTimeout(r, 500));
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:greenyellow">▓</span><span style="color:darkred">▓</span>'
+    await new Promise(r => setTimeout(r, 500));
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:dimgray">▓</span><span style="color:darkred">▓</span>'
+    await new Promise(r => setTimeout(r, 500));
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:greenyellow">▓</span><span style="color:darkred">▓</span>'
+    await new Promise(r => setTimeout(r, 500));
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:dimgray">▓</span><span style="color:darkred">▓</span>'
+    await new Promise(r => setTimeout(r, 500));
+
+    await new Promise(r => setTimeout(r, 2000));
     document.getElementById('carstatus').innerHTML = 'In garage'
     document.getElementById('carstatus').style.color = 'red'
 
@@ -110,6 +125,7 @@ export class GaragePage implements OnInit {
     document.getElementById('buttonStartRace').style.color = 'lime'
     this.startRaceButtonCollor = 'lime'
     this.repairButtonCollor = 'orange-black'
+    this.equipButtonCollor =  'orange-black'
 
 
   }

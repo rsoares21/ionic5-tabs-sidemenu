@@ -35,12 +35,13 @@
         </ion-card-header>
     </ion-card>
 
-    <ion-card style="background-color: lime; padding: 0px; margin: 0px;">
-        <span id="instantracelog" style="display: flex; justify-content: center; color:black">
+    <center>
+        <ion-card style="background-color: lime; width: 330px">
+            <span id="instantracelog" style="justify-content: center; color:black;">
             
         </span>
-    </ion-card>
-
+        </ion-card>
+    </center>
 
 
     <ion-card>
@@ -52,7 +53,7 @@
             </ion-card-subtitle>
         </ion-card-header>
         <ion-card-content style="margin:0px;padding: 0px; top: 0px;">
-            <table style="margin:0px;padding: 0px; top: 0px; font-family: consolas; font-size: 10px; margin: 2px; border-color: yellow;" border="0" width="99%">
+            <table style="margin:0px;padding: 0px; top: 0px; font-family: Consolas; font-size: 10px; margin: 2px; border-color: yellow;" border="0" width="99%">
                 <tr>
                     <td rowspan="6" width="130" style="text-align: right; padding-right: 5px;">
                         <div id="garagecar1" (click)="carlights()">
@@ -62,39 +63,39 @@
                     </td>
                 </tr>
                 <tr>
-                    <td width="72px" style="color: whitesmoke;">
+                    <td width="72px" style="color: darkgrey;">
                         Max Speed
                     </td>
-                    <td width="80px" style="color: orange;padding-left: 3px;">▓▓▓▓<span style="color:rgb(255, 200, 98)">▓</span><span style="color:dimgray">▓▓▓▓▓▓▓▓▓▓▓</span></td>
+                    <td width="80px" style="color: white;padding-left: 3px;">▓<span style="color:orange">▓▓▓▓</span><span style="color:rgb(255, 200, 98)">▓</span><span style="color:dimgray">▓▓▓▓▓▓▓▓▓▓▓</span></td>
                     <td width="50px" style="text-align: left;padding-left: 5px;">Lv 1</td>
                 </tr>
                 <tr>
-                    <td style="color: whitesmoke">
+                    <td style="color: darkgrey">
                         Acceleration
                     </td>
-                    <td width="80px" style="color: gold;padding-left: 3px;">▓▓▓▓▓▓<span style="color:yellow">▓▓</span><span style="color:dimgray">▓▓▓▓▓▓▓▓</span></td>
-                    <td width="50px" style="text-align: left;padding-left: 5px;">Lv 1</td>
+                    <td width="80px" style="color: white;padding-left: 3px;">▓<span style="color:gold">▓▓▓▓▓▓</span><span style="color:yellow">▓▓</span><span style="color:dimgray">▓▓▓▓▓▓▓▓</span></td>
+                    <td width="50px" style="text-align: left;padding-left: 5px;">Lv 2</td>
                 </tr>
                 <tr>
-                    <td style="color: whitesmoke">
+                    <td style="color: darkgrey">
                         Braking
                     </td>
-                    <td width="80px" style="color: firebrick;padding-left: 3px;">▓▓▓▓<span style="color:crimson"></span><span style="color:dimgray">▓▓▓▓▓▓▓▓▓▓▓▓</span></td>
-                    <td width="50px" style="text-align: left;padding-left: 5px;">Lv 1</td>
+                    <td width="80px" style="color: white;padding-left: 3px;">▓<span style="color:firebrick">▓▓▓▓</span><span style="color:crimson"></span><span style="color:dimgray">▓▓▓▓▓▓▓▓▓▓▓▓</span></td>
+                    <td width="50px" style="text-align: left;padding-left: 5px;">Lv 0</td>
                 </tr>
                 <tr>
-                    <td style="color: whitesmoke">
+                    <td style="color: darkgrey">
                         Balance
                     </td>
-                    <td width="80px" style="color: greenyellow;padding-left: 3px;">▓▓▓▓▓▓▓▓▓▓<span style="color:lime">▓</span><span style="color:dimgray">▓▓▓▓</span><span style="color:dimgray">▓</span></td>
+                    <td width="80px" style="color: white;padding-left: 3px;">▓▓<span style="color:greenyellow">▓▓▓▓▓▓▓▓▓</span><span style="color:lime">▓</span><span style="color:dimgray">▓▓▓▓</span><span style="color:dimgray">▓</span></td>
                     <td width="50px" style="text-align: left;padding-left: 5px;">Lv 1</td>
                 </tr>
 
                 <tr>
-                    <td style="color:whitesmoke" id="carconditiontitle">
+                    <td style="color:darkgrey" id="carconditiontitle">
                         Condition
                     </td>
-                    <td width="80px" style="padding-left: 3px;" id="carcondition"><span style="color: greenyellow;">▓</span><span style="color:dimgray">▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:darkred">▓</span></td>
+                    <td width="80px" style="padding-left: 3px;" id="carcondition"><span style="color: greenyellow;">▓▓</span><span style="color:dimgray">▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:darkred">▓</span></td>
                     <td>&nbsp;<span style="color:goldenrod;padding-left: 5px;" (click)="showConditionHelp()"> <b>?</b> </span></td>
                 </tr>
 
@@ -114,7 +115,7 @@
                                     <ion-button (click)="carlights() " color="warning" style="width: 66px; height: 18px; font-size: 9px;">LIGHTS</ion-button>
                                 </td>
                                 <td width="25%" align="center">
-                                    <ion-button color="medium" style="width: 66px; height: 18px; font-size: 9px;">DISABLED</ion-button>
+                                    <ion-button color="medium" style="width: 66px; height: 18px; font-size: 9px;" color="{{ equipButtonCollor }} ">EQUIP</ion-button>
                                 </td>
                                 <td width="25%" align="center">
                                     <ion-button (click)="repairCar()" style="width: 66px; height: 18px; font-size: 9px; " color="{{ repairButtonCollor }} ">REPAIR CAR</ion-button>
@@ -128,6 +129,8 @@
 
         </ion-card-content>
     </ion-card>
+
+
 
     <div style="display: flex; justify-content: center; ">
 
