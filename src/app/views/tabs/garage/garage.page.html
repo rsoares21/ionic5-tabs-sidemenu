@@ -1,16 +1,17 @@
 <app-header title="Garage"></app-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" style="margin: 0 auto !important;">
     <ion-header collapse="condense">
         <ion-toolbar>
             <ion-title size="large">Garage</ion-title>
         </ion-toolbar>
     </ion-header>
+
     <ion-card style="background-color: gold;">
         <ion-card-header style="padding: 5px;">
             <ion-card-subtitle style="font-size: 12px;color: black;padding-bottom: 2px;"><b><i>GARAGE INVENTORY</i></b>
             </ion-card-subtitle>
-            <table width="100%; top:0px" border="0">
+            <table width="330px; top:0px" border="0">
                 <tr>
                     <td width="24%">
                         <span style="color:black;;font-size: 10px;"><b>FUEL </b></span>
@@ -34,19 +35,26 @@
         </ion-card-header>
     </ion-card>
 
+    <ion-card style="background-color: lime; padding: 0px; margin: 0px;">
+        <span id="instantracelog" style="display: flex; justify-content: center; color:black">
+            
+        </span>
+    </ion-card>
+
+
 
     <ion-card>
         <ion-card-header>
             <ion-card-title>NY Taxi Cab</ion-card-title>
             <ion-card-subtitle style="font-size: 12px;">ID:1099801278420
                 <span style="color:dimgray;font-size: 10px;">STATUS: </span>
-                <span style="color:lime;font-size: 10px;">Racing </span>
+                <span style="color:red;font-size: 10px;" id="carstatus">In garage </span>
             </ion-card-subtitle>
         </ion-card-header>
         <ion-card-content style="margin:0px;padding: 0px; top: 0px;">
             <table style="margin:0px;padding: 0px; top: 0px; font-family: consolas; font-size: 10px; margin: 2px; border-color: yellow;" border="0" width="99%">
                 <tr>
-                    <td rowspan="6" width="130">
+                    <td rowspan="6" width="130" style="text-align: right; padding-right: 5px;">
                         <div id="garagecar1" (click)="carlights()">
                             <img src="../../../../assets/nytaxicab.jfif" width="120px">
                         </div>
@@ -57,63 +65,71 @@
                     <td width="72px" style="color: whitesmoke;">
                         Max Speed
                     </td>
-                    <td width="80px" style="color: orange;padding-left: 3px;">▓▓▓▓<span style="color:rgb(255, 200, 98)">▓</span><span style="color:dimgray">▓▓▓▓▓▓▓</span></td>
+                    <td width="80px" style="color: orange;padding-left: 3px;">▓▓▓▓<span style="color:rgb(255, 200, 98)">▓</span><span style="color:dimgray">▓▓▓▓▓▓▓▓▓▓▓</span></td>
+                    <td width="50px" style="text-align: left;padding-left: 5px;">Lv 1</td>
                 </tr>
                 <tr>
                     <td style="color: whitesmoke">
                         Acceleration
                     </td>
-                    <td width="80px" style="color: gold;padding-left: 3px;">▓▓▓▓▓▓<span style="color:yellow">▓▓</span><span style="color:dimgray">▓▓▓▓</span></td>
+                    <td width="80px" style="color: gold;padding-left: 3px;">▓▓▓▓▓▓<span style="color:yellow">▓▓</span><span style="color:dimgray">▓▓▓▓▓▓▓▓</span></td>
+                    <td width="50px" style="text-align: left;padding-left: 5px;">Lv 1</td>
                 </tr>
                 <tr>
                     <td style="color: whitesmoke">
                         Braking
                     </td>
-                    <td width="80px" style="color: firebrick;padding-left: 3px;">▓▓▓▓<span style="color:crimson"></span><span style="color:dimgray">▓▓▓▓▓▓▓▓</span></td>
+                    <td width="80px" style="color: firebrick;padding-left: 3px;">▓▓▓▓<span style="color:crimson"></span><span style="color:dimgray">▓▓▓▓▓▓▓▓▓▓▓▓</span></td>
+                    <td width="50px" style="text-align: left;padding-left: 5px;">Lv 1</td>
                 </tr>
                 <tr>
                     <td style="color: whitesmoke">
                         Balance
                     </td>
-                    <td width="80px" style="color: greenyellow;padding-left: 3px;">▓▓▓▓▓▓▓▓▓▓<span style="color:lime">▓</span><span style="color:dimgray">▓</span></td>
+                    <td width="80px" style="color: greenyellow;padding-left: 3px;">▓▓▓▓▓▓▓▓▓▓<span style="color:lime">▓</span><span style="color:dimgray">▓▓▓▓</span><span style="color:dimgray">▓</span></td>
+                    <td width="50px" style="text-align: left;padding-left: 5px;">Lv 1</td>
                 </tr>
 
                 <tr>
-                    <td style="color:darkgrey">
+                    <td style="color:whitesmoke" id="carconditiontitle">
                         Condition
                     </td>
-                    <td width="80px" style="padding-left: 3px;" id="carcondition"><span style="color: greenyellow;">▓</span><span style="color:dimgray">▓▓▓▓▓▓▓▓▓▓</span><span style="color:darkred">▓</span></td>
+                    <td width="80px" style="padding-left: 3px;" id="carcondition"><span style="color: greenyellow;">▓</span><span style="color:dimgray">▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:darkred">▓</span></td>
+                    <td>&nbsp;<span style="color:goldenrod;padding-left: 5px;" (click)="showConditionHelp()"> <b>?</b> </span></td>
                 </tr>
 
             </table>
             <span style="color:dimgray;font-size: 10px; margin-left: 5px;">RANK: </span>
             <span style="color:white;font-size: 10px;">15th </span>
 
-            <ion-card style="background-color: black; padding: 0px; margin: 0px;">
+            <ion-card style=" background-color: black; padding: 0px; margin: 0px; ">
                 <ion-card-header style="padding: 5px;">
-                    <table width="330px" border="0">
-                        <tr>
-                            <td width="25%" align="center">
-                                <ion-button (click)="startRace()" color="medium" style="width: 66px; height: 18px; font-size: 9px;"><b>START RACE</b></ion-button>
-                            </td>
-                            <td width="25%" align="center">
-                                <ion-button (click)="carlights()" color="warning" style="width: 66px; height: 18px; font-size: 9px;">LIGHTS</ion-button>
-                            </td>
-                            <td width="25%" align="center">
-                                <ion-button color="medium" style="width: 66px; height: 18px; font-size: 9px;">DISABLED</ion-button>
-                            </td>
-                            <td width="25%" align="center">
-                                <ion-button (click)="repairCar()" style="width: 66px; height: 18px; font-size: 9px;" color="orange-black">REPAIR CAR</ion-button>
-                            </td>
-                        </tr>
+                    <center>
+                        <table width="330px" border="0">
+                            <tr>
+                                <td width="25%" align="center">
+                                    <ion-button (click)="startRace() " color="{{ startRaceButtonCollor }} " style="width: 66px; height: 18px; font-size: 9px; " id="buttonStartRace"><b>START RACE</b></ion-button>
+                                </td>
+                                <td width="25%" align="center">
+                                    <ion-button (click)="carlights() " color="warning" style="width: 66px; height: 18px; font-size: 9px;">LIGHTS</ion-button>
+                                </td>
+                                <td width="25%" align="center">
+                                    <ion-button color="medium" style="width: 66px; height: 18px; font-size: 9px;">DISABLED</ion-button>
+                                </td>
+                                <td width="25%" align="center">
+                                    <ion-button (click)="repairCar()" style="width: 66px; height: 18px; font-size: 9px; " color="{{ repairButtonCollor }} ">REPAIR CAR</ion-button>
+                                </td>
+                            </tr>
 
-                    </table>
+                        </table>
+                    </center>
                 </ion-card-header>
             </ion-card>
 
         </ion-card-content>
     </ion-card>
-    <div style="display: flex; justify-content: center;">
+
+    <div style="display: flex; justify-content: center; ">
 
     </div>
 </ion-content>
