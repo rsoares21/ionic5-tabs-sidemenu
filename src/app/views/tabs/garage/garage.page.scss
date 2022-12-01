@@ -33,3 +33,39 @@
     --ion-color-shade: orange;
     --ion-color-tint: orange;
 }
+
+.ion-color-blue-black {
+    --ion-color-base: DeepSkyBlue;
+    --ion-color-base-rgb: 82, 255, 84;
+    --ion-color-contrast: #000000;
+    --ion-color-contrast-rgb: 0, 0, 0;
+    --ion-color-shade: DeepSkyBlue;
+    --ion-color-tint: DeepSkyBlue;
+}
+
+@keyframes example {
+    from {
+        background-color: black;
+    }
+    to {
+        background-color: goldenrod;
+    }
+}
+
+@keyframes dexample {
+    from {
+        background-color: dodgerblue;
+    }
+    to {
+        background-color: black;
+    }
+}
+
+.scrolling-wrapper {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    .card {
+        display: inline-block;
+    }
+}

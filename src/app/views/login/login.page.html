@@ -22,5 +22,21 @@
         <ion-button (click)="loginWithAnchor()" *ngIf="!isLoggedIn" color="warning">Anchor Wallet Login</ion-button>
     </div>
 
+    <br><br><br><br><br><br>
+
+    <div style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+        <center>
+            <audio name="my_audio" src="../../../assets/turbo-racing-aggressive-energe.m4a" type="audio/x-m4a" autoplay> </audio>
+            <script type="text/javascript">
+                setTimeout(function() {
+                    document.getElementById("my_audio").play();
+                    console.log('your audio is started just now');
+                }, 4000)
+            </script>
+        </center>
+
+    </div>
+
+
     <ion-button [routerLink]="['/tabs/garage']" *ngIf="isLoggedIn">To garage</ion-button>
 </ion-content>

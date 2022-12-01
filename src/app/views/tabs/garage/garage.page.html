@@ -35,22 +35,28 @@
         </ion-card-header>
     </ion-card>
 
-    <center>
-        <ion-card style="background-color: lime; width: 330px">
-            <span id="instantracelog" style="justify-content: center; color:black;">
-            
-        </span>
-        </ion-card>
-    </center>
-
-
     <ion-card>
         <ion-card-header>
             <ion-card-title>NY Taxi Cab</ion-card-title>
             <ion-card-subtitle style="font-size: 12px;">ID:1099801278420
                 <span style="color:dimgray;font-size: 10px;">STATUS: </span>
-                <span style="color:red;font-size: 10px;" id="carstatus">In garage </span>
+                <span style="color:gold;font-size: 10px;" id="carstatus">In garage </span><br>
             </ion-card-subtitle>
+
+            <ion-card id="raceprogressbar" style="background-color: goldenrod; padding: 0px; margin: 0px; height: 3px; margin-top: 5px; width: 100%;">
+                <span style="display: flex; justify-content: center; color:black; ">
+              </span>
+            </ion-card>
+
+            <center>
+                <ion-card style="background-color: lime; width: 330px; margin-top: 5px; padding: 0px;" (click)="this.afterClickPlacedPosition()">
+                    <span id="instantracelog" style="justify-content: center; color:black;font-family: Consolas; font-size: 20px;">
+                    
+                </span>
+                </ion-card>
+            </center>
+
+
         </ion-card-header>
         <ion-card-content style="margin:0px;padding: 0px; top: 0px;">
             <table style="margin:0px;padding: 0px; top: 0px; font-family: Consolas; font-size: 10px; margin: 2px; border-color: yellow;" border="0" width="99%">
@@ -59,7 +65,6 @@
                         <div id="garagecar1" (click)="carlights()">
                             <img src="../../../../assets/nytaxicab.jfif" width="120px">
                         </div>
-
                     </td>
                 </tr>
                 <tr>
@@ -103,6 +108,17 @@
             <span style="color:dimgray;font-size: 10px; margin-left: 5px;">RANK: </span>
             <span style="color:white;font-size: 10px;">15th </span>
 
+            <center>
+                <div id="tunningTitleBar" style="background-color:gold;border-radius: 5px 5px 0px 0px;color:crimson;font-family: RacingSansOne; font-size: 14px;"></div>
+            </center>
+
+            <div id="tuningwindow" style="background-color: goldenrod; margin-top: 5px; margin: 0px;padding: 0px;overflow-x: scroll;letter-spacing: 2px" (click)="this.afterClickPlacedPosition()">
+                <span id="tuningsection" style="color:crimson;font-family: RacingSansOne; font-size: 14px;">
+                
+            </span>
+            </div>
+
+
             <ion-card style=" background-color: black; padding: 0px; margin: 0px; ">
                 <ion-card-header style="padding: 5px;">
                     <center>
@@ -115,7 +131,7 @@
                                     <ion-button (click)="carlights() " color="warning" style="width: 66px; height: 18px; font-size: 9px;">LIGHTS</ion-button>
                                 </td>
                                 <td width="25%" align="center">
-                                    <ion-button color="medium" style="width: 66px; height: 18px; font-size: 9px;" color="{{ equipButtonCollor }} ">EQUIP</ion-button>
+                                    <ion-button (click)="switchTuningWindow()" color="medium" style="width: 66px; height: 18px; font-size: 9px;" color="{{ equipButtonCollor }} ">TUNING</ion-button>
                                 </td>
                                 <td width="25%" align="center">
                                     <ion-button (click)="repairCar()" style="width: 66px; height: 18px; font-size: 9px; " color="{{ repairButtonCollor }} ">REPAIR CAR</ion-button>
