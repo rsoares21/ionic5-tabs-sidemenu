@@ -1,6 +1,9 @@
+/* eslint-disable @typescript-eslint/naming-convention */
+/* eslint-disable curly */
+/* eslint-disable @typescript-eslint/semi */
 import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
-import { Router } from "@angular/router";
+import { Router } from '@angular/router';
 // The required anchor-link includes
 import AnchorLink, { ChainId, LinkSession } from 'anchor-link'
 import AnchorLinkBrowserTransport from 'anchor-link-browser-transport'
@@ -12,13 +15,15 @@ import AnchorLinkBrowserTransport from 'anchor-link-browser-transport'
 })
 export class LoginPage implements OnInit {
 
+  isLoggedIn;
+
   constructor(public menu: MenuController, private router: Router) {
     this.menu.enable(false);
     this.menu.swipeGesture(false);
 
     sessionStorage.removeItem('isLoggedIn');
     sessionStorage.removeItem('pdata');
-    let isLoggedIn = sessionStorage.getItem('isLoggedIn') != null
+    this.isLoggedIn = sessionStorage.getItem('isLoggedIn') != null
 
   }
 
@@ -57,14 +62,14 @@ export class LoginPage implements OnInit {
     const { session } = identity;
     sessionStorage.setItem('isLoggedIn', "true");
 
-    let pdata = { id: 1, account: session.auth, balance_trophy: 100, balance_tyres: 50 }
+    const pdata = { id: 1, account: session.auth, balance_trophy: 100, balance_tyres: 50 }
 
     sessionStorage.setItem('pdata', JSON.stringify(pdata));
 
     console.log(`Logged in as ${session.auth}`);
-    let isLoggedIn = sessionStorage.getItem('isLoggedIn') != null;
-    if (isLoggedIn) this.router.navigate(['/logintransition'])
-    
+    this.isLoggedIn = sessionStorage.getItem('isLoggedIn') != null;
+    if (this.isLoggedIn) this.router.navigate(['/logintransition'])
+
   }
 
 

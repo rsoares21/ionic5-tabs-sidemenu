@@ -40,7 +40,7 @@
             <ion-card-title>NY Taxi Cab</ion-card-title>
             <ion-card-subtitle style="font-size: 12px;">ID:1099801278420
                 <span style="color:dimgray;font-size: 10px;">STATUS: </span>
-                <span style="color:gold;font-size: 10px;" id="carstatus">In garage </span><br>
+                <span style="color:gold;font-size: 10px;" id="carstatus">{{ this.state.carStatus}} </span><br>
             </ion-card-subtitle>
 
             <ion-card id="raceprogressbar" style="background-color: goldenrod; padding: 0px; margin: 0px; height: 3px; margin-top: 5px; width: 100%;">
@@ -72,28 +72,28 @@
                         Max Speed
                     </td>
                     <td width="80px" style="color: white;padding-left: 3px;">▓▓<span style="color:orange">▓▓</span><span style="color:rgb(255, 200, 98)">▓</span><span style="color:dimgray">▓▓▓▓▓▓▓▓▓▓▓▓</span></td>
-                    <td width="50px" style="text-align: left;padding-left: 5px;">Lv 2</td>
+                    <td width="50px" style="text-align: left;padding-left: 5px;;color:darkgrey">Lv 2</td>
                 </tr>
                 <tr>
                     <td style="color: darkgrey">
                         Acceleration
                     </td>
-                    <td width="80px" style="color: white;padding-left: 3px;">▓<span style="color:gold">▓▓▓▓▓▓</span><span style="color:yellow">▓▓</span><span style="color:dimgray">▓▓▓▓▓▓▓▓</span></td>
-                    <td width="50px" style="text-align: left;padding-left: 5px;">Lv 2</td>
+                    <td width="80px" style="color: white;padding-left: 3px;"><span style="color:gold">▓▓▓▓▓▓</span><span style="color:yellow">▓▓</span><span style="color:dimgray">▓▓▓▓▓▓▓▓▓</span></td>
+                    <td width="50px" style="text-align: left;padding-left: 5px;;color:darkgrey">Lv 0</td>
                 </tr>
                 <tr>
                     <td style="color: darkgrey">
                         Braking
                     </td>
                     <td width="80px" style="color: white;padding-left: 3px;">▓<span style="color:firebrick">▓▓▓▓</span><span style="color:crimson"></span><span style="color:dimgray">▓▓▓▓▓▓▓▓▓▓▓▓</span></td>
-                    <td width="50px" style="text-align: left;padding-left: 5px;">Lv 0</td>
+                    <td width="50px" style="text-align: left;padding-left: 5px;;color:darkgrey">Lv 1</td>
                 </tr>
                 <tr>
                     <td style="color: darkgrey">
                         Balance
                     </td>
-                    <td width="80px" style="color: white;padding-left: 3px;">▓▓<span style="color:greenyellow">▓▓▓▓▓▓▓▓▓</span><span style="color:lime">▓</span><span style="color:dimgray">▓▓▓▓</span><span style="color:dimgray">▓</span></td>
-                    <td width="50px" style="text-align: left;padding-left: 5px;">Lv 1</td>
+                    <td width="80px" style="color: white;padding-left: 3px;">▓▓<span style="color:greenyellow">▓▓▓▓▓▓</span><span style="color:lime">▓</span><span style="color:dimgray">▓▓▓▓▓▓▓</span><span style="color:dimgray">▓</span></td>
+                    <td width="50px" style="text-align: left;padding-left: 5px;color:darkgrey">Lv 2</td>
                 </tr>
 
                 <tr>
@@ -109,7 +109,7 @@
             <span style="color:white;font-size: 10px;">15th </span>
 
             <center>
-                <div id="tunningTitleBar" style="background-color:gold;border-radius: 5px 5px 0px 0px;color:crimson;font-family: RacingSansOne; font-size: 14px;"></div>
+                <div id="tunningTitleBar" style="background-color:gold;border-radius: 5px 5px 0px 0px;color:orangered;font-family: RacingSansOne; font-size: 14px;;margin:0px;padding:0px"></div>
             </center>
 
             <div id="tuningwindow" style="background-color: goldenrod; margin-top: 5px; margin: 0px;padding: 0px;overflow-x: scroll;letter-spacing: 2px">
@@ -128,13 +128,13 @@
                                     <ion-button (click)="startRace() " color="{{ startRaceButtonCollor }} " style="width: 66px; height: 18px; font-size: 9px; " id="buttonStartRace"><b>START RACE</b></ion-button>
                                 </td>
                                 <td width="25%" align="center">
-                                    <ion-button (click)="carlights() " color="warning" style="width: 66px; height: 18px; font-size: 9px;">UPGRADE</ion-button>
+                                    <ion-button (click)="switchTuningWindow()" color="warning" style="width: 66px; height: 18px; font-size: 9px;">UPGRADE</ion-button>
                                 </td>
                                 <td width="25%" align="center">
-                                    <ion-button (click)="switchTuningWindow()" color="medium" style="width: 66px; height: 18px; font-size: 9px;" color="{{ equipButtonCollor }} ">TUNING</ion-button>
+                                    <ion-button (click)="switchTuningWindow()" style="width: 66px; height: 18px; font-size: 9px;" color="{{ equipButtonCollor }}">TUNING</ion-button>
                                 </td>
                                 <td width="25%" align="center">
-                                    <ion-button (click)="repairCar()" style="width: 66px; height: 18px; font-size: 9px; " color="{{ repairButtonCollor }} ">REPAIR CAR</ion-button>
+                                    <ion-button (click)="repairCar()" style="width: 66px; height: 18px; font-size: 9px; " color="{{ repairButtonCollor }}">REPAIR CAR</ion-button>
                                 </td>
                             </tr>
 
