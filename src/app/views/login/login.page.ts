@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 // The required anchor-link includes
 import AnchorLink, { ChainId, LinkSession } from 'anchor-link'
 import AnchorLinkBrowserTransport from 'anchor-link-browser-transport'
+import { PathLocationStrategy } from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -72,15 +73,11 @@ export class LoginPage implements OnInit {
       const pilotContract = { id: 1111111111111, account: 'rizzlesizzle', trophies: 200, tyres: 200, fuel: 200 }
 
       const assetsContract = [  // scoped to rizzlesizzle
-        { asset_id: 2222222222222, template_id: 3333333333333, asset_type: 'car', lv_accelerarion: 0, lv_maxspeed: 2, lv_braking: 1, lv_balance: 2, condition: 9, staketime: 1663785879 }, //car1
-        { asset_id: 2222222222223, template_id: 3333333333334, asset_type: 'carupgrade', lv_accelerarion: 0, lv_maxspeed: 1, condition: 100, staketime: 1663785879 }  //nft upgrade
+        { asset_id: 2222222222222, template_id: 3333333333333, upgrade_target: 0, asset_type: 'car', maxspeed: 1, acceleration: 2, braking: 3, balance: 4, lv_maxspeed: 2, lv_acceleration: 1, lv_braking: 1, lv_balance: 2, condition: 9, staketime: 1663785879 }, //car1
+        { asset_id: 2222222222223, template_id: 3333333333334, upgrade_target: 2222222222222, asset_type: 'carupgrade', maxspeed: 4, acceleration: 3, braking: 2, balance: 1, condition: 100, staketime: 1663785879 }  //nft upgrade
       ]
 
-      const upgrades = [
-        { asset_id: 2222222222222, upgrade_asset_id: 2222222222223, upgradeTime: 1663785879 }
-      ]
-
-      const pdata = { pilotContract: null, assetsContract: null }
+      const pdata = { pilotContract: null, assetsContract: null}
 
       pdata.pilotContract = pilotContract
       pdata.assetsContract = assetsContract

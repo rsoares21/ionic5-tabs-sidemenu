@@ -367,7 +367,7 @@ export class GaragePage implements OnInit {
     console.log('init:' + new Date())
     for (let i = 0; i <= maxProgressBar; i++) {
       document.getElementById('raceprogressbar').style.width = i + '%'
-      await new Promise(r => setTimeout(r, raceTimeInSeconds/maxProgressBar));
+      await new Promise(r => setTimeout(r, raceTimeInSeconds / maxProgressBar));
     }
     console.log('ended:' + new Date())
 
@@ -425,32 +425,117 @@ export class GaragePage implements OnInit {
     this.repairButtonCollor = 'orange-black'
     this.equipButtonCollor = 'orange-black'
 
+  }
+
+  updateCarsBars() {
+    this.playerData = JSON.parse(sessionStorage.getItem('pdata'));
+    this.playerAccount = JSON.stringify(this.playerData.pilotContract.account)
+    console.log('this.playerData:' + JSON.stringify(this.playerData))
+
+    const stakedCars = this.playerData.assetsContract.filter(asset => asset.asset_type === 'car');
+    const stakedUpgrades = this.playerData.assetsContract.filter(asset => asset.asset_type === 'carupgrade');
+
+    for (const car of stakedCars) {
+
+      console.log('car:' + JSON.stringify(car))
+
+      // CARS LEVEL BAR POINTS
+      let currentbar = ''
+      for (let i = 0; i < car.lv_maxspeed; i++) {
+        currentbar = currentbar + '▓'
+      }
+      document.getElementById('maxspeedLvlbarCar' + car.asset_id).innerHTML = currentbar
+
+      currentbar = ''
+      for (let i = 0; i < car.lv_acceleration; i++) {
+        currentbar = currentbar + '▓'
+      }
+      document.getElementById('accelerationLvlbarCar' + car.asset_id).innerHTML = currentbar
+
+      currentbar = ''
+      for (let i = 0; i < car.lv_braking; i++) {
+        currentbar = currentbar + '▓'
+      }
+      document.getElementById('brakingLvlbarCar' + car.asset_id).innerHTML = currentbar
+
+      currentbar = ''
+      for (let i = 0; i < car.lv_balance; i++) {
+        currentbar = currentbar + '▓'
+      }
+      document.getElementById('balanceLvlbarCar' + car.asset_id).innerHTML = currentbar
+
+      // CARS BASE BAR POINTS
+      currentbar = ''
+      for (let i = 0; i < car.maxspeed; i++) {
+        currentbar = currentbar + '▓'
+      }
+      document.getElementById('maxspeedBasebarCar' + car.asset_id).innerHTML = currentbar
+
+      currentbar = ''
+      for (let i = 0; i < car.acceleration; i++) {
+        currentbar = currentbar + '▓'
+      }
+      document.getElementById('accelerationBasebarCar' + car.asset_id).innerHTML = currentbar
+
+      currentbar = ''
+      for (let i = 0; i < car.braking; i++) {
+        currentbar = currentbar + '▓'
+      }
+      document.getElementById('brakingBasebarCar' + car.asset_id).innerHTML = currentbar
+
+      currentbar = ''
+      for (let i = 0; i < car.balance; i++) {
+        currentbar = currentbar + '▓'
+      }
+      document.getElementById('balanceBasebarCar' + car.asset_id).innerHTML = currentbar
+
+
+      // CARS UPGRADES BAR POINTS
+      for (const upgrade of stakedUpgrades) {
+
+        console.log('upgrade:' + JSON.stringify(upgrade))
+
+        if (upgrade.upgrade_target === car.asset_id) {
+
+          currentbar = ''
+          for (let i = 0; i < upgrade.maxspeed; i++) {
+            currentbar = currentbar + '▓'
+          }
+          document.getElementById('maxspeedTunebarCar' + car.asset_id).innerHTML = currentbar
+
+          currentbar = ''
+          for (let i = 0; i < upgrade.acceleration; i++) {
+            currentbar = currentbar + '▓'
+          }
+          document.getElementById('accelerationTunebarCar' + car.asset_id).innerHTML = currentbar
+
+          currentbar = ''
+          for (let i = 0; i < upgrade.braking; i++) {
+            currentbar = currentbar + '▓'
+          }
+          document.getElementById('brakingTunebarCar' + car.asset_id).innerHTML = currentbar
+
+          currentbar = ''
+          for (let i = 0; i < upgrade.balance; i++) {
+            currentbar = currentbar + '▓'
+          }
+          document.getElementById('balanceTunebarCar' + car.asset_id).innerHTML = currentbar
+
+
+
+        }
+
+      }
+
+    }
+
 
   }
 
   ngOnInit() {
     console.log('garage ngOnInit()')
 
-    this.playerData = JSON.parse(sessionStorage.getItem('pdata'));
-    this.playerAccount = JSON.stringify(this.playerData.pilotContract.account)
-    console.log('this.playerData:'+JSON.stringify(this.playerData))
-
-    //Cars Bars
-    let thisbar = ''
-
-    this.playerData.assetsContract.filter((asset) => {
-      if (asset.asset_type === 'car') console.log('car:'+JSON.stringify(asset))
-      //console.log('asset:'+JSON.stringify(asset))
-    })
-
-    for (let i = 0; i < 1; i++) {
-      thisbar = thisbar + '▓'
-    }
-
-    document.getElementById('maxspeedLvlbarCar1').innerHTML = thisbar
-
-
-
+    this.updateCarsBars()
 
     const isLoggedIn = sessionStorage.getItem('isLoggedIn') != null
     if (!isLoggedIn) this.router.navigate(['/login'])
