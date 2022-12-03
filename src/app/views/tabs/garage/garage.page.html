@@ -63,7 +63,7 @@
                 <tr>
                     <td rowspan="6" width="130" style="text-align: right; padding-right: 5px;">
                         <div id="garagecar1" (click)="carlights()">
-                            <img src="../../../../assets/nytaxicab.jfif" width="120px">
+                            <img src="../../../../assets/nytaxicab.png" width="120px">
                         </div>
                     </td>
                 </tr>
@@ -71,7 +71,7 @@
                     <td width="72px" style="color: darkgrey;">
                         Max Speed
                     </td>
-                    <td width="80px" style="color: white;padding-left: 3px;">▓▓<span style="color:orange">▓▓</span><span style="color:rgb(255, 200, 98)">▓</span><span style="color:dimgray">▓▓▓▓▓▓▓▓▓▓▓▓</span></td>
+                    <td width="80px" style="color: white;padding-left: 3px;">▓▓<span id="maxspeedLvlbarCar1" style="color:orange">▓▓</span><span id="maxspeedBasebarCar1" style="color:rgb(255, 200, 98)">▓</span><span id="maxspeedTunebarCar1" style="color:dimgray">▓▓▓▓▓▓▓▓▓▓▓▓</span></td>
                     <td width="50px" style="text-align: left;padding-left: 5px;;color:darkgrey">Lv 2</td>
                 </tr>
                 <tr>
@@ -109,11 +109,17 @@
             <span style="color:white;font-size: 10px;">15th </span>
 
             <center>
-                <div id="tunningTitleBar" style="background-color:gold;border-radius: 5px 5px 0px 0px;color:orangered;font-family: RacingSansOne; font-size: 14px;;margin:0px;padding:0px"></div>
+                <div id="car1SubMenuTitleBar" style="background-color:gold;border-radius: 5px 5px 0px 0px;color:orangered;font-family: RacingSansOne; font-size: 14px;;margin:0px;padding:0px"></div>
             </center>
 
             <div id="tuningwindow" style="background-color: goldenrod; margin-top: 5px; margin: 0px;padding: 0px;overflow-x: scroll;letter-spacing: 2px">
-                <span id="tuningsection" style="color:crimson;font-family: RacingSansOne; font-size: 14px;">
+                <span id="tuningsection" style="font-size: 14px;">
+                
+            </span>
+            </div>
+
+            <div id="upgradingwindow" style="background-color: dodgerblue; margin-top: 5px; margin: 0px;padding: 0px;overflow-x: scroll;letter-spacing: 2px">
+                <span id="upgradingsection" style="font-size: 14px;">
                 
             </span>
             </div>
@@ -128,7 +134,7 @@
                                     <ion-button (click)="startRace() " color="{{ startRaceButtonCollor }} " style="width: 66px; height: 18px; font-size: 9px; " id="buttonStartRace"><b>START RACE</b></ion-button>
                                 </td>
                                 <td width="25%" align="center">
-                                    <ion-button (click)="switchTuningWindow()" color="warning" style="width: 66px; height: 18px; font-size: 9px;">UPGRADE</ion-button>
+                                    <ion-button (click)="switchUpgradeWindow()" color="warning" style="width: 66px; height: 18px; font-size: 9px;">UPGRADE</ion-button>
                                 </td>
                                 <td width="25%" align="center">
                                     <ion-button (click)="switchTuningWindow()" style="width: 66px; height: 18px; font-size: 9px;" color="{{ equipButtonCollor }}">TUNING</ion-button>

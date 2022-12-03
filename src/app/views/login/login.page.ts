@@ -1,3 +1,5 @@
+/* eslint-disable prefer-const */
+/* eslint-disable max-len */
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable curly */
 /* eslint-disable @typescript-eslint/semi */
@@ -37,7 +39,7 @@ export class LoginPage implements OnInit {
 
     //if (isLoggedIn) this.router.navigate(['/tabs/garage'])
     //if (isLoggedIn) this.router.navigate(['/logintransition'])
-    
+
 
   }
 
@@ -60,17 +62,43 @@ export class LoginPage implements OnInit {
 
     // Save the session within your application for future use
     const { session } = identity;
-    sessionStorage.setItem('isLoggedIn', "true");
-
-    const pdata = { id: 1, account: session.auth, balance_trophy: 100, balance_tyres: 50 }
-
-    sessionStorage.setItem('pdata', JSON.stringify(pdata));
+    sessionStorage.setItem('isLoggedIn', 'true');
 
     console.log(`Logged in as ${session.auth}`);
     this.isLoggedIn = sessionStorage.getItem('isLoggedIn') != null;
-    if (this.isLoggedIn) this.router.navigate(['/logintransition'])
+    if (this.isLoggedIn) {
+
+      const config = { paused: false }
+      const pilotContract = { id: 1111111111111, account: 'rizzlesizzle', trophies: 200, tyres: 200, fuel: 200 }
+
+      const assetsContract = [  // scoped to rizzlesizzle
+        { asset_id: 2222222222222, template_id: 3333333333333, asset_type: 'car', lv_accelerarion: 0, lv_maxspeed: 2, lv_braking: 1, lv_balance: 2, condition: 9, staketime: 1663785879 }, //car1
+        { asset_id: 2222222222223, template_id: 3333333333334, asset_type: 'carupgrade', lv_accelerarion: 0, lv_maxspeed: 1, condition: 100, staketime: 1663785879 }  //nft upgrade
+      ]
+
+      const upgrades = [
+        { asset_id: 2222222222222, upgrade_asset_id: 2222222222223, upgradeTime: 1663785879 }
+      ]
+
+      const pdata = { pilotContract: null, assetsContract: null }
+
+      pdata.pilotContract = pilotContract
+      pdata.assetsContract = assetsContract
+
+      //pdata = { id: 1, account: session.auth, trophies: 100, tyres: 50, fuel: 200 }
+      sessionStorage.setItem('pdata', JSON.stringify(pdata));
+
+      this.router.navigate(['/logintransition'])
+
+
+    }
+
+
+    //c/onst = playerData = { acoount: session.auth, ''}
 
   }
 
-
 }
+
+
+

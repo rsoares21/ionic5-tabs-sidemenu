@@ -35,37 +35,34 @@ export class GaragePage implements OnInit {
 
   async switchUpgradeWindow() {
 
-    if (this.state.tuningWindowOpen) {
-      console.log(1)
+    const someWindowAlreadyOpen = (this.state.isUpgradingWindowOpen || this.state.isTuningWindowOpen)
 
+    // hides other tabs
+    if (this.state.isTuningWindowOpen) {
+      console.log(1)
+      document.getElementById('tuningwindow').style.height = '0px'
+      this.state.isTuningWindowOpen = false
+    } else {
+      console.log(2)
+    }
+
+    if (this.state.isUpgradingWindowOpen) {
+      console.log(1)
+      //console.log(1)
       for (let i = 20; i >= 0; i--) {
-        document.getElementById('tuningwindow').style.height = (i * 6) + 'px'
+        document.getElementById('upgradingwindow').style.height = (i * 6) + 'px'
         await new Promise(r => setTimeout(r, 10));
       }
-
-      document.getElementById('tuningwindow').style.height = '0px'
-      document.getElementById('tuningsection').innerHTML = ''
-      document.getElementById('tunningTitleBar').innerHTML = ''
-      document.getElementById('tuningwindow').style.animationName = 'none';
-
-      this.state.tuningWindowOpen = false
-      console.log('a')
-      this.startRaceButtonCollor = 'lime'
+      document.getElementById('car1SubMenuTitleBar').innerHTML = ''
+      //document.getElementById('tuningwindow').style.height = '0px'
+      //document.getElementById('tuningsection').innerHTML = ''
+      document.getElementById('upgradingwindow').style.animationName = 'none';
+      this.state.isUpgradingWindowOpen = false
+      this.state.isTuningWindowOpen = false
+      //console.log('a')
 
     } else {
-
       console.log(2)
-
-      this.startRaceButtonCollor = 'medium'
-
-      document.getElementById('tunningTitleBar').innerHTML = '<b>TUNING</b>'
-
-      document.getElementById('tuningwindow').style.height = '120px'
-      for (let i = 0; i <= 20; i++) {
-        document.getElementById('tuningwindow').style.height = (i * 6) + 'px'
-        await new Promise(r => setTimeout(r, 5));
-      }
-
 
       const htmlT = '' +
         '<div style="display: flex; width:800px; margin-top:6px">' +
@@ -138,12 +135,28 @@ export class GaragePage implements OnInit {
         '' +
         '</div>'
 
-      document.getElementById('tuningsection').insertAdjacentHTML('beforeend', htmlT)
+      //console.log(2)
+      document.getElementById('car1SubMenuTitleBar').innerHTML = '<b>UPGRADE</b>'
+      document.getElementById('upgradingwindow').style.visibility = 'visible'
+      document.getElementById('upgradingwindow').style.height = '120px'
 
-      document.getElementById('tuningwindow').style.animationName = 'example';
-      document.getElementById('tuningwindow').style.animationDuration = '1s';
+      if (someWindowAlreadyOpen) {
+        document.getElementById('upgradingwindow').style.height = '120px'
+      } else {
+        for (let i = 0; i <= 20; i++) {
+          document.getElementById('upgradingwindow').style.height = (i * 6) + 'px'
+          await new Promise(r => setTimeout(r, 5));
+        }
+      }
 
-      this.state.tuningWindowOpen = true
+      //document.getElementById('upgradingsection').insertAdjacentHTML('beforeend', htmlT)
+      document.getElementById('upgradingsection').innerHTML = htmlT
+
+      document.getElementById('upgradingwindow').style.animationName = 'upgradingwind';
+      document.getElementById('upgradingwindow').style.animationDuration = '1s';
+
+      this.state.isUpgradingWindowOpen = true
+
 
     }
 
@@ -151,36 +164,32 @@ export class GaragePage implements OnInit {
 
   async switchTuningWindow() {
 
-    let tuningWindowOpen = !(document.getElementById('tuningsection').innerHTML === '')
+    const someWindowAlreadyOpen = (this.state.isUpgradingWindowOpen || this.state.isTuningWindowOpen)
 
-    if (tuningWindowOpen) {
+    // hides other tabs
+    if (this.state.isUpgradingWindowOpen) {
       console.log(1)
+      document.getElementById('upgradingwindow').style.height = '0px'
+      this.state.isUpgradingWindowOpen = false
+    } else {
+      console.log(2)
+    }
 
+
+    if (this.state.isTuningWindowOpen) {
+      //console.log(1)
       for (let i = 20; i >= 0; i--) {
         document.getElementById('tuningwindow').style.height = (i * 6) + 'px'
         await new Promise(r => setTimeout(r, 10));
       }
-
-      document.getElementById('tuningwindow').style.height = '0px'
-      document.getElementById('tuningsection').innerHTML = ''
-      document.getElementById('tunningTitleBar').innerHTML = ''
+      document.getElementById('car1SubMenuTitleBar').innerHTML = ''
+      //document.getElementById('tuningwindow').style.height = '0px'
+      //document.getElementById('tuningsection').innerHTML = ''
       document.getElementById('tuningwindow').style.animationName = 'none';
-
-      tuningWindowOpen = false
-      console.log('a')
+      this.state.isTuningWindowOpen = false
+      //console.log('a')
 
     } else {
-
-      console.log(2)
-
-      document.getElementById('tunningTitleBar').innerHTML = '<b>TUNING</b>'
-
-      document.getElementById('tuningwindow').style.height = '120px'
-      for (let i = 0; i <= 20; i++) {
-        document.getElementById('tuningwindow').style.height = (i * 6) + 'px'
-        await new Promise(r => setTimeout(r, 5));
-      }
-
 
       const htmlT = '' +
         '<div style="display: flex; width:800px; margin-top:6px">' +
@@ -237,7 +246,6 @@ export class GaragePage implements OnInit {
         '         <td style="height:60px;width:50px;background-color:limegreen;color:black"><center>NFT</center></td>' +
         '         <td style="height:60px;width:50px;background-color:black;color:white"><center>NFT</center></td>' +
         '         <td style="height:60px;width:50px;background-color:black;color:white"><center>NFT</center></td>' +
-
         '      </tr>' +
         '      <tr>' +
         '         <td style="width:50px;background-color:goldenrod"><center><ion-button (click)="carlights() " color="primary" style="width: 36px; height: 12px; font-size: 8px;">EQUIP</ion-button></center></td>' +
@@ -248,17 +256,31 @@ export class GaragePage implements OnInit {
         '      </tr>' +
         '      </table>' +
         '</td></tr></table>&nbsp;' +
-
         '' +
         '' +
         '</div>'
 
-      document.getElementById('tuningsection').insertAdjacentHTML('beforeend', htmlT)
+      //console.log(2)
+      document.getElementById('car1SubMenuTitleBar').innerHTML = '<b>TUNING</b>'
+      document.getElementById('tuningwindow').style.visibility = 'visible'
+      document.getElementById('tuningwindow').style.height = '120px'
 
-      document.getElementById('tuningwindow').style.animationName = 'example';
+      if (someWindowAlreadyOpen) {
+        document.getElementById('tuningwindow').style.height = '120px'
+      } else {
+        for (let i = 0; i <= 20; i++) {
+          document.getElementById('tuningwindow').style.height = (i * 6) + 'px'
+          await new Promise(r => setTimeout(r, 5));
+        }
+      }
+
+      //document.getElementById('tuningsection').insertAdjacentHTML('beforeend', htmlT)
+      document.getElementById('tuningsection').innerHTML = htmlT
+
+      document.getElementById('tuningwindow').style.animationName = 'tuningwind';
       document.getElementById('tuningwindow').style.animationDuration = '1s';
 
-      tuningWindowOpen = true
+      this.state.isTuningWindowOpen = true
 
     }
 
@@ -338,10 +360,16 @@ export class GaragePage implements OnInit {
     document.getElementById('carstatus').innerHTML = 'In Race'
     document.getElementById('raceprogressbar').style.backgroundColor = 'lime'
 
-    for (let i = 0; i <= 300; i++) {
-      document.getElementById('raceprogressbar').style.width = i / 3 + '%'
-      await new Promise(r => setTimeout(r, 20));
+    //const raceTimeInSeconds = 2700000 // 45 minutes
+    const raceTimeInSeconds = 120000 // 15 minutes
+    const maxProgressBar = 100
+
+    console.log('init:' + new Date())
+    for (let i = 0; i <= maxProgressBar; i++) {
+      document.getElementById('raceprogressbar').style.width = i + '%'
+      await new Promise(r => setTimeout(r, raceTimeInSeconds/maxProgressBar));
     }
+    console.log('ended:' + new Date())
 
     document.getElementById('raceprogressbar').style.backgroundColor = 'goldenrod'
     document.getElementById('instantracelog').style.color = 'color:black'
@@ -401,17 +429,31 @@ export class GaragePage implements OnInit {
   }
 
   ngOnInit() {
+    console.log('garage ngOnInit()')
+
+    this.playerData = JSON.parse(sessionStorage.getItem('pdata'));
+    this.playerAccount = JSON.stringify(this.playerData.pilotContract.account)
+    console.log('this.playerData:'+JSON.stringify(this.playerData))
+
+    //Cars Bars
+    let thisbar = ''
+
+    this.playerData.assetsContract.filter((asset) => {
+      if (asset.asset_type === 'car') console.log('car:'+JSON.stringify(asset))
+      //console.log('asset:'+JSON.stringify(asset))
+    })
+
+    for (let i = 0; i < 1; i++) {
+      thisbar = thisbar + '▓'
+    }
+
+    document.getElementById('maxspeedLvlbarCar1').innerHTML = thisbar
+
+
+
 
     const isLoggedIn = sessionStorage.getItem('isLoggedIn') != null
     if (!isLoggedIn) this.router.navigate(['/login'])
-
-    console.log(JSON.stringify('isLoggedIn:' + isLoggedIn))
-
-    this.playerData = JSON.parse(sessionStorage.getItem('pdata'));
-    this.playerAccount = JSON.stringify(this.playerData.account.actor)
-    this.playerAccount = this.playerAccount.replace('\"', '').replace('\"', '')
-
-    console.log('player_data:' + JSON.stringify(this.playerData))
 
   }
 

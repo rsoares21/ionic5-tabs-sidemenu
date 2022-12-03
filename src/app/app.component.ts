@@ -33,13 +33,14 @@ export class AppComponent {
   playerAccount;
   constructor() {
 
-    this.playerData = JSON.parse(sessionStorage.getItem('pdata'));
+    //this.playerData = JSON.parse(sessionStorage.getItem('pdata'));
 
-    if (this.playerData != null) {
-      this.playerAccount = JSON.stringify(this.playerData.account.actor)
-      this.playerAccount = this.playerAccount.replace("\"", "").replace("\"", "")
+    //if (this.playerData != null) {
+      //console.log('this.playerData:'+JSON.stringify(this.playerData))
+      //this.playerAccount = JSON.stringify(this.playerData.pilotContract.account)
+      
   
-    }
+    //}
 
   }
 }

@@ -52,6 +52,24 @@
     }
 }
 
+@keyframes tuningwind {
+    from {
+        background-color: black;
+    }
+    to {
+        background-color: goldenrod;
+    }
+}
+
+@keyframes upgradingwind {
+    from {
+        background-color: black;
+    }
+    to {
+        background-color: dodgerblue;
+    }
+}
+
 @keyframes dexample {
     from {
         background-color: dodgerblue;
