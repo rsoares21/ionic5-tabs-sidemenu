@@ -71,22 +71,24 @@
                     <td width="72px" style="color: darkgrey;">
                         Max Speed
                     </td>
-                    <td width="80px" style="color: white;padding-left: 3px;"><span id="maxspeedLvlbarCar2222222222222" style="color:white"></span><span id="maxspeedBasebarCar2222222222222" style="color:rgb(255, 200, 98)"></span><span id="maxspeedTunebarCar2222222222222" style="color:orange"></span><span id="barfillCar2222222222222"
-                            style="color:dimgrey"></span></td>
+                    <td width="80px" style="color: white;padding-left: 3px;"><span id="maxspeedLvlbarCar2222222222222" style="color:white"></span><span id="maxspeedBasebarCar2222222222222" style="color:rgb(255, 200, 98)"></span><span id="maxspeedTunebarCar2222222222222" style="color:orange"></span>
+                        <span id="fillmaxspeedCar2222222222222" style="color:dimgrey"></span></td>
                     <td width="50px" style="text-align: left;padding-left: 5px;;color:darkgrey">Lv 2</td>
                 </tr>
                 <tr>
                     <td style="color: darkgrey">
                         Acceleration
                     </td>
-                    <td width="80px" style="color: white;padding-left: 3px;"><span id="accelerationLvlbarCar2222222222222" style="color:white"></span><span id="accelerationBasebarCar2222222222222" style="color:yellow"></span><span id="accelerationTunebarCar2222222222222" style="color:gold"></span></td>
+                    <td width="80px" style="color: white;padding-left: 3px;"><span id="accelerationLvlbarCar2222222222222" style="color:white"></span><span id="accelerationBasebarCar2222222222222" style="color:yellow"></span><span id="accelerationTunebarCar2222222222222" style="color:gold"></span>
+                        <span id="fillaccelerationCar2222222222222" style="color:dimgrey"></span></td>
                     <td width="50px" style="text-align: left;padding-left: 5px;;color:darkgrey">Lv 0</td>
                 </tr>
                 <tr>
                     <td style="color: darkgrey">
                         Braking
                     </td>
-                    <td width="80px" style="color: white;padding-left: 3px;"><span id="brakingLvlbarCar2222222222222" style="color:white"></span><span id="brakingBasebarCar2222222222222" style="color:red"></span><span id="brakingTunebarCar2222222222222" style="color:firebrick"></span></td>
+                    <td width="80px" style="color: white;padding-left: 3px;"><span id="brakingLvlbarCar2222222222222" style="color:white"></span><span id="brakingBasebarCar2222222222222" style="color:red"></span><span id="brakingTunebarCar2222222222222" style="color:firebrick"></span>
+                        <span id="fillbrakingCar2222222222222" style="color:dimgrey"></span></td>
                     <td width="50px" style="text-align: left;padding-left: 5px;;color:darkgrey">Lv 1</td>
                 </tr>
                 <tr>
@@ -94,7 +96,7 @@
                         Balance
                     </td>
                     <td width="80px" style="color: white;padding-left: 3px;"><span id="balanceLvlbarCar2222222222222" style="color:white"></span><span id="balanceBasebarCar2222222222222" style="color:greenyellow"></span><span id="balanceTunebarCar2222222222222" style="color:lime"></span>
-                        <span style="color:dimgray"></span>
+                        <span id="fillbalanceCar2222222222222" style="color:dimgrey"></span>
                     </td>
                     <td width="50px" style="text-align: left;padding-left: 5px;color:darkgrey">Lv 2</td>
                 </tr>
@@ -103,7 +105,7 @@
                     <td style="color:darkgrey" id="carconditiontitle">
                         Condition
                     </td>
-                    <td width="80px" style="padding-left: 3px;" id="carcondition"><span style="color: greenyellow;">▓▓</span><span style="color:dimgray">▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:darkred">▓</span></td>
+                    <td width="80px" style="padding-left: 3px;" id="carcondition"><span style="color: greenyellow;">▓▓</span><span style="color:dimgray">▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:darkred">▓</span></td>
                     <td>&nbsp;<span style="color:goldenrod;padding-left: 5px;" (click)="showConditionHelp()"> <b>?</b> </span></td>
                 </tr>
 
@@ -115,16 +117,213 @@
                 <div id="car1SubMenuTitleBar" style="background-color:gold;border-radius: 5px 5px 0px 0px;color:orangered;font-family: RacingSansOne; font-size: 14px;;margin:0px;padding:0px"></div>
             </center>
 
-            <div id="tuningwindow" style="background-color: goldenrod; margin-top: 5px; margin: 0px;padding: 0px;overflow-x: scroll;letter-spacing: 2px">
+            <div id="tuningwindow" style="background-color: red; margin-top: 5px; margin: 0px;padding: 0px;overflow-x: scroll;letter-spacing: 2px; height:0px">
                 <span id="tuningsection" style="font-size: 14px;">
-                
+
+                    <div style="display: flex; width:800px; margin-top:6px">
+                        &nbsp;
+                        <table><tr><td>
+                              <table style="background-color:white" border="0"><tr><td colspan="3"><span style="padding-left:4px;font-family:Consolas;font-size:10px;color:black;"><b>MAX SPEED</b></span></td>
+                </tr>
+                <tr>
+                    <td style="height:60px;width:50px;background-color:deeppink;color:black;">
+                        <center>NFT</center>
+                    </td>
+                    <td style="height:60px;width:50px;background-color:dodgerblue;color:black">
+                        <center>NFT</center>
+                    </td>
+                    <td style="height:60px;width:50px;background-color:black;color:white">
+                        <center>NFT</center>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:50px;background-color:goldenrod">
+                        <center>
+                            <ion-button (click)="carlights()" color="danger" style="width: 36px; height: 12px; font-size: 8px;">REMOVE</ion-button>
+                        </center>
+                    </td>
+                    <td style="width:50px;background-color:goldenrod">
+                        <center>
+                            <ion-button (click)="carlights()" color="danger" style="width: 36px; height: 12px; font-size: 8px;">REMOVE</ion-button>
+                        </center>
+                    </td>
+                    <td style="width:50px;background-color:goldenrod">
+                        <center>
+                            <ion-button (click)="carlights()" color="danger" style="width: 36px; height: 12px; font-size: 8px;">REMOVE</ion-button>
+                        </center>
+                    </td>
+                </tr>
+                </table>
+                </td>
+                </tr>
+                </table>&nbsp;
+                <table>
+                    <tr>
+                        <td>
+                            <table style="background-color:white" border="0">
+                                <tr>
+                                    <td colspan="3"><span style="padding-left:5px;font-family:Consolas;font-size:10px;color:black"><b>ACCELERATION</b></span></td>
+                                </tr>
+                                <tr>
+                                    <td style="height:60px;width:50px;background-color:dodgerblue;color:black">
+                                        <center>NFT</center>
+                                    </td>
+                                    <td style="height:60px;width:50px;background-color:limegreen;color:black">
+                                        <center>NFT</center>
+                                    </td>
+                                    <td style="height:60px;width:50px;background-color:black;color:white">
+                                        <center>NFT</center>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50px;background-color:goldenrod">
+                                        <center>
+                                            <ion-button (click)="carlights()" color="primary" style="width: 36px; height: 12px; font-size: 8px;">EQUIP</ion-button>
+                                        </center>
+                                    </td>
+                                    <td style="width:50px;background-color:goldenrod">
+                                        <center>
+                                            <ion-button (click)="carlights()" color="danger" style="width: 36px; height: 12px; font-size: 8px;">REMOVE</ion-button>
+                                        </center>
+                                    </td>
+                                    <td style="width:50px;background-color:goldenrod">
+                                        <center>
+                                            <ion-button (click)="carlights()" color="primary" style="width: 36px; height: 12px; font-size: 8px;">EQUIP</ion-button>
+                                        </center>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>&nbsp;
+                <table>
+                    <tr>
+                        <td>
+                            <table style="background-color:white" border="0">
+                                <tr>
+                                    <td colspan="3"><span style="padding-left:5px;font-family:Consolas;font-size:10px;color:black"><b>BRAKING</b></span></td>
+                                </tr>
+                                <tr>
+                                    <td style="height:60px;width:50px;background-color:yellow;color:black">
+                                        <center>NFT</center>
+                                    </td>
+                                    <td style="height:60px;width:50px;background-color:dodgerblue;color:black">
+                                        <center>NFT</center>
+                                    </td>
+                                    <td style="height:60px;width:50px;background-color:dodgerblue;color:black">
+                                        <center>NFT</center>
+                                    </td>
+                                    <td style="height:60px;width:50px;background-color:black;color:white">
+                                        <center>NFT</center>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50px;background-color:goldenrod">
+                                        <center>
+                                            <ion-button (click)="carlights()" color="danger" style="width: 36px; height: 12px; font-size: 8px;">REMOVE</ion-button>
+                                        </center>
+                                    </td>
+                                    <td style="width:50px;background-color:goldenrod">
+                                        <center>
+                                            <ion-button (click)="carlights()" color="primary" style="width: 36px; height: 12px; font-size: 8px;">EQUIP</ion-button>
+                                        </center>
+                                    </td>
+                                    <td style="width:50px;background-color:goldenrod">
+                                        <center>
+                                            <ion-button (click)="carlights()" color="danger" style="width: 36px; height: 12px; font-size: 8px;">REMOVE</ion-button>
+                                        </center>
+                                    </td>
+                                    <td style="width:50px;background-color:goldenrod">
+                                        <center>
+                                            <ion-button (click)="carlights()" color="primary" style="width: 36px; height: 12px; font-size: 8px;">EQUIP</ion-button>
+                                        </center>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>&nbsp;
+                <table>
+                    <tr>
+                        <td>
+                            <table style="background-color:white" border="0">
+                                <tr>
+                                    <td colspan="5"><span style="padding-left:5px;font-family:Consolas;font-size:10px;color:black"><b>BALANCE</b></span></td>
+                                </tr>
+                                <tr>
+                                    <td style="height:60px;width:50px;background-color:yellow;color:black">
+                                        <center>NFT</center>
+                                    </td>
+                                    <td style="height:60px;width:50px;background-color:dodgerblue;color:black">
+                                        <center>NFT</center>
+                                    </td>
+                                    <td style="height:60px;width:50px;background-color:limegreen;color:black">
+                                        <center>NFT</center>
+                                    </td>
+                                    <td style="height:60px;width:50px;background-color:black;color:white">
+                                        <center>NFT</center>
+                                    </td>
+                                    <td style="height:60px;width:50px;background-color:black;color:white">
+                                        <center>NFT</center>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50px;background-color:goldenrod">
+                                        <center>
+                                            <ion-button (click)="carlights() " color="primary" style="width: 36px; height: 12px; font-size: 8px;">EQUIP</ion-button>
+                                        </center>
+                                    </td>
+                                    <td style="width:50px;background-color:goldenrod">
+                                        <center>
+                                            <ion-button (click)="carlights() " color="danger" style="width: 36px; height: 12px; font-size: 8px;">REMOVE</ion-button>
+                                        </center>
+                                    </td>
+                                    <td style="width:50px;background-color:goldenrod">
+                                        <center>
+                                            <ion-button (click)="carlights() " color="danger" style="width: 36px; height: 12px; font-size: 8px;">REMOVE</ion-button>
+                                        </center>
+                                    </td>
+                                    <td style="width:50px;background-color:goldenrod">
+                                        <center>
+                                            <ion-button (click)="carlights() " color="danger" style="width: 36px; height: 12px; font-size: 8px;">REMOVE</ion-button>
+                                        </center>
+                                    </td>
+                                    <td style="width:50px;background-color:goldenrod">
+                                        <center>
+                                            <ion-button (click)="carlights() " color="danger" style="width: 36px; height: 12px; font-size: 8px;">REMOVE</ion-button>
+                                        </center>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>&nbsp;
+            </div>
             </span>
             </div>
 
-            <div id="upgradingwindow" style="background-color: dodgerblue; margin-top: 5px; margin: 0px;padding: 0px;overflow-x: scroll;letter-spacing: 2px">
+            <div id="upgradingwindow" style="background-color: goldenrod; margin-top: 5px; margin: 0px;padding: 0px;overflow-x: scroll;letter-spacing: 2px; height:0px">
                 <span id="upgradingsection" style="font-size: 14px;">
-                
-            </span>
+
+                    <center><div style="display: flex; width:100%; margin-top:6px;">
+                        <table><tr><td>
+                              <table style="background-color:white;font-family:Consolas;font-size:10px;" border="1">
+                              <tr>
+                                 <td style="height:60px;width:80px;background-color:darkgrey;color:black;"><center><b>MAX SPEED</b></center></td>
+                                 <td style="height:60px;width:100px;background-color:darkgrey;color:black;"><center><b>ACCELERATION</b></center></td>
+                                 <td style="height:60px;width:80px;background-color:darkgrey;color:black;"><center><b>BRAKING</b></center></td>
+                                 <td style="height:60px;width:80px;background-color:darkgrey;color:black;"><center><b>BALANCE</b></center></td>
+                              </tr>
+                              <tr>
+                                 <td style="background-color:goldenrod"><center><ion-button id="btupgrademaxspeed" color="warning" style="width: 66px; height: 18px; font-size: 9px;">UPGRADE</ion-button></center></td>
+                                 <td style="background-color:goldenrod"><center><ion-button id="btupgradeacceleration" color="warning" style="width: 66px; height: 18px; font-size: 9px;">UPGRADE</ion-button></center></td>
+                                 <td style="background-color:goldenrod"><center><ion-button id="btupgradebraking" color="warning" style="width: 66px; height: 18px; font-size: 9px;">UPGRADE</ion-button></center></td>
+                                 <td style="background-color:goldenrod"><center><ion-button id="btupgradebalance" color="warning" style="width: 66px; height: 18px; font-size: 9px;">UPGRADE</ion-button></center></td>
+                              </tr>
+                              </table>
+                        </td></tr></table>&nbsp;
+                    </div></center>
+                </span>
             </div>
 
 
@@ -134,7 +333,7 @@
                         <table width="330px" border="0">
                             <tr>
                                 <td width="25%" align="center">
-                                    <ion-button (click)="startRace() " color="{{ startRaceButtonCollor }} " style="width: 66px; height: 18px; font-size: 9px; " id="buttonStartRace"><b>START RACE</b></ion-button>
+                                    <ion-button (click)="startRace()" color="{{ startRaceButtonCollor }} " style="width: 66px; height: 18px; font-size: 9px; " id="buttonStartRace"><b>START RACE</b></ion-button>
                                 </td>
                                 <td width="25%" align="center">
                                     <ion-button (click)="switchUpgradeWindow()" color="warning" style="width: 66px; height: 18px; font-size: 9px;">UPGRADE</ion-button>
