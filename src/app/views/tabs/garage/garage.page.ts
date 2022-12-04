@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable max-len */
 /* eslint-disable @typescript-eslint/semi */
 /* eslint-disable curly */
@@ -19,6 +20,7 @@ export class GaragePage implements OnInit {
   repairButtonCollor = 'orange-black';
   equipButtonCollor = 'orange-black';
   state;
+  constants;
   upgradingsectionHTML = '';
   constructor(private router: Router, private sanitizer: DomSanitizer) {
 
@@ -143,35 +145,41 @@ export class GaragePage implements OnInit {
     this.startRaceButtonCollor = 'medium'
     document.getElementById('carconditiontitle').style.color = 'lime'
     await new Promise(r => setTimeout(r, pausedelay));
-    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓</span><span style="color:dimgray">▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:darkred">▓</span>'
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">■■</span><span style="color:dimgray">■■■■■■■■■■■■■■■■■</span><span style="color:darkred">■</span>'
     await new Promise(r => setTimeout(r, pausedelay));
-    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓</span><span style="color:dimgray">▓▓▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:darkred">▓</span>'
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">■■■</span><span style="color:dimgray">■■■■■■■■■■■■■■■■</span><span style="color:darkred">■</span>'
     await new Promise(r => setTimeout(r, pausedelay));
-    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓</span><span style="color:dimgray">▓▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:darkred">▓</span>'
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">■■■■</span><span style="color:dimgray">■■■■■■■■■■■■■■■</span><span style="color:darkred">■</span>'
     await new Promise(r => setTimeout(r, pausedelay));
-    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓</span><span style="color:dimgray">▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:darkred">▓</span>'
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">■■■■■</span><span style="color:dimgray">■■■■■■■■■■■■■■</span><span style="color:darkred">■</span>'
     await new Promise(r => setTimeout(r, pausedelay));
-    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓</span><span style="color:dimgray">▓▓▓▓▓▓▓▓▓▓</span><span style="color:darkred">▓</span>'
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">■■■■■■</span><span style="color:dimgray">■■■■■■■■■■■■■</span><span style="color:darkred">■</span>'
     await new Promise(r => setTimeout(r, pausedelay));
-    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓</span><span style="color:dimgray">▓▓▓▓▓▓▓▓▓</span><span style="color:darkred">▓</span>'
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">■■■■■■■</span><span style="color:dimgray">■■■■■■■■■■■■</span><span style="color:darkred">■</span>'
     await new Promise(r => setTimeout(r, pausedelay));
-    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓▓</span><span style="color:dimgray">▓▓▓▓▓▓▓▓</span><span style="color:darkred">▓</span>'
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">■■■■■■■■</span><span style="color:dimgray">■■■■■■■■■■■</span><span style="color:darkred">■</span>'
     await new Promise(r => setTimeout(r, pausedelay));
-    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓▓▓</span><span style="color:dimgray">▓▓▓▓▓▓▓</span><span style="color:darkred">▓</span>'
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">■■■■■■■■■</span><span style="color:dimgray">■■■■■■■■■■</span><span style="color:darkred">■</span>'
     await new Promise(r => setTimeout(r, pausedelay));
-    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓▓▓▓</span><span style="color:dimgray">▓▓▓▓▓▓</span><span style="color:darkred">▓</span>'
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">■■■■■■■■■■</span><span style="color:dimgray">■■■■■■■■■</span><span style="color:darkred">■</span>'
     await new Promise(r => setTimeout(r, pausedelay));
-    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:dimgray">▓▓▓▓▓</span><span style="color:darkred">▓</span>'
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">■■■■■■■■■■■</span><span style="color:dimgray">■■■■■■■■</span><span style="color:darkred">■</span>'
     await new Promise(r => setTimeout(r, pausedelay));
-    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:dimgray">▓▓▓▓</span><span style="color:darkred">▓</span>'
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">■■■■■■■■■■■■</span><span style="color:dimgray">■■■■■■■</span><span style="color:darkred">■</span>'
     await new Promise(r => setTimeout(r, pausedelay));
-    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:dimgray">▓▓▓</span><span style="color:darkred">▓</span>'
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">■■■■■■■■■■■■■</span><span style="color:dimgray">■■■■■■</span><span style="color:darkred">■</span>'
     await new Promise(r => setTimeout(r, pausedelay));
-    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:dimgray">▓▓</span><span style="color:darkred">▓</span>'
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">■■■■■■■■■■■■■■</span><span style="color:dimgray">■■■■■</span><span style="color:darkred">■</span>'
     await new Promise(r => setTimeout(r, pausedelay));
-    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:dimgray">▓</span><span style="color:darkred">▓</span>'
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">■■■■■■■■■■■■■■■</span><span style="color:dimgray">■■■■</span><span style="color:darkred">■</span>'
     await new Promise(r => setTimeout(r, pausedelay));
-    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:dimgray"></span><span style="color:darkred">▓</span>'
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">■■■■■■■■■■■■■■■■</span><span style="color:dimgray">■■■</span><span style="color:darkred">■</span>'
+    await new Promise(r => setTimeout(r, pausedelay));
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">■■■■■■■■■■■■■■■■■</span><span style="color:dimgray">■■</span><span style="color:darkred">■</span>'
+    await new Promise(r => setTimeout(r, pausedelay));
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">■■■■■■■■■■■■■■■■■■</span><span style="color:dimgray">■</span><span style="color:darkred">■</span>'
+    await new Promise(r => setTimeout(r, pausedelay));
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">■■■■■■■■■■■■■■■■■■■</span><span style="color:dimgray"></span><span style="color:darkred">■</span>'
 
 
 
@@ -208,7 +216,7 @@ export class GaragePage implements OnInit {
     document.getElementById('raceprogressbar').style.backgroundColor = 'lime'
 
     //const raceTimeInSeconds = 2700000 // 45 minutes
-    const raceTimeInSeconds = 120000 // 15 minutes
+    const raceTimeInSeconds = 20000
     const maxProgressBar = 100
 
     console.log('init:' + new Date())
@@ -223,21 +231,30 @@ export class GaragePage implements OnInit {
     document.getElementById('instantracelog').innerHTML = '<b>You placed 3rd!</b><span style="font-size:8px"> click to close<span>'
     document.getElementById('raceprogressbar').style.backgroundColor = 'grey'
 
-    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:greenyellow">▓</span><span style="color:darkred">▓</span>'
+
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">■■■■■■■■■■■■■■■■■■</span><span style="color:greenyellow">■</span><span style="color:darkred">■</span>'
     await new Promise(r => setTimeout(r, 500));
-    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:dimgray">▓</span><span style="color:darkred">▓</span>'
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">■■■■■■■■■■■■■■■■■■</span><span style="color:dimgray">■</span><span style="color:darkred">■</span>'
     await new Promise(r => setTimeout(r, 500));
-    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:greenyellow">▓</span><span style="color:darkred">▓</span>'
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">■■■■■■■■■■■■■■■■■■</span><span style="color:greenyellow">■</span><span style="color:darkred">■</span>'
     await new Promise(r => setTimeout(r, 500));
-    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:dimgray">▓</span><span style="color:darkred">▓</span>'
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">■■■■■■■■■■■■■■■■■■</span><span style="color:dimgray">■</span><span style="color:darkred">■</span>'
     await new Promise(r => setTimeout(r, 500));
-    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:greenyellow">▓</span><span style="color:darkred">▓</span>'
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">■■■■■■■■■■■■■■■■■■</span><span style="color:greenyellow">■</span><span style="color:darkred">■</span>'
     await new Promise(r => setTimeout(r, 500));
-    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:dimgray">▓</span><span style="color:darkred">▓</span>'
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">■■■■■■■■■■■■■■■■■■</span><span style="color:dimgray">■</span><span style="color:darkred">■</span>'
     await new Promise(r => setTimeout(r, 500));
-    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:dimgray">▓</span><span style="color:darkred">▓</span>'
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">■■■■■■■■■■■■■■■■■■</span><span style="color:greenyellow">■</span><span style="color:darkred">■</span>'
     await new Promise(r => setTimeout(r, 500));
-    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:dimgray">▓</span><span style="color:darkred">▓</span>'
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">■■■■■■■■■■■■■■■■■■</span><span style="color:dimgray">■</span><span style="color:darkred">■</span>'
+    await new Promise(r => setTimeout(r, 500));
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">■■■■■■■■■■■■■■■■■■</span><span style="color:greenyellow">■</span><span style="color:darkred">■</span>'
+    await new Promise(r => setTimeout(r, 500));
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">■■■■■■■■■■■■■■■■■■</span><span style="color:dimgray">■</span><span style="color:darkred">■</span>'
+    await new Promise(r => setTimeout(r, 500));
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">■■■■■■■■■■■■■■■■■■</span><span style="color:dimgray">■</span><span style="color:darkred">■</span>'
+    await new Promise(r => setTimeout(r, 500));
+    document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">■■■■■■■■■■■■■■■■■■</span><span style="color:dimgray">■</span><span style="color:darkred">■</span>'
     await new Promise(r => setTimeout(r, 500));
 
     await new Promise(r => setTimeout(r, 500));
@@ -256,10 +273,10 @@ export class GaragePage implements OnInit {
     document.getElementById('carstatus').innerHTML = 'Returning to garage'
     document.getElementById('carstatus').style.color = 'gold'
 
-    for (let i = 0; i <= 200; i++) {
+    for (let i = 0; i <= 500; i++) {
       document.getElementById('raceprogressbar').style.backgroundColor = 'goldenrod'
-      document.getElementById('raceprogressbar').style.width = i / 2 + '%'
-      await new Promise(r => setTimeout(r, 10));
+      document.getElementById('raceprogressbar').style.width = i / 5 + '%'
+      await new Promise(r => setTimeout(r, 20));
     }
 
     document.getElementById('carstatus').innerHTML = this.state.carStatus
@@ -274,171 +291,358 @@ export class GaragePage implements OnInit {
 
   }
 
-  updateCarsBars() {
+  upgradeMaxSpeed(points: number, carId: number) {
+
     this.playerData = JSON.parse(sessionStorage.getItem('pdata'));
-    this.playerAccount = JSON.stringify(this.playerData.pilotContract.account)
-    console.log('this.playerData:' + JSON.stringify(this.playerData))
 
-    const stakedCars = this.playerData.assetsContract.filter(asset => asset.asset_type === 'car');
-    const stakedUpgrades = this.playerData.assetsContract.filter(asset => asset.asset_type === 'carupgrade');
+    console.log('upgradeMaxSpeed:' + JSON.stringify(this.playerData))
 
-    for (const car of stakedCars) {
+    this.playerData.assetsContract.filter(asset => asset.asset_id === carId).forEach(upgradedcar => {
+      //console.log('upgradedcar.lv_maxspeed:' +upgradedcar.lv_maxspeed)
 
-      const totalbarpoints = 20
-      let fillmaxspeed = totalbarpoints
-      let fillacceleration = totalbarpoints
-      let fillbraking = totalbarpoints
-      let fillbalance = totalbarpoints
+      // AFTER SUCCESS API RESPONSE
+      //upgradedcar.lv_maxspeed = upgradedcar.lv_maxspeed + points
 
+      const updatedAssetData = this.playerData.carupgradesContract.filter(carupgrade => carupgrade.upgrade_type !== 'maxspeed' && carupgrade.car_id !== carId)
 
-      console.log('car:' + JSON.stringify(car))
+      // Limits upgrades one at a time
+      if (points > 0) {
 
-      // CARS LEVEL BAR POINTS
-      let currentbar = ''
-      for (let i = 0; i < car.lv_maxspeed; i++) {
-        fillmaxspeed--
-        currentbar = currentbar + '▓'
+        if (updatedAssetData.length !== this.playerData.carupgradesContract.length) {
+          alert('maxspeed already upgrading')
+          return
+        }
+
+        // transact
+        const carupgradeContract = { id: 1, car_id: 2222222222222, upgrade_type: 'maxspeed', upgraded_at: 1670183165 }
+        updatedAssetData.push(carupgradeContract)
+        const updatedPlayerData = this.playerData
+        updatedPlayerData.carupgradesContract = updatedAssetData
+        sessionStorage.setItem('pdata', JSON.stringify(updatedPlayerData));
+
       }
-      document.getElementById('maxspeedLvlbarCar' + car.asset_id).innerHTML = currentbar
 
-      currentbar = ''
-      for (let i = 0; i < car.lv_acceleration; i++) {
-        fillacceleration--
-        currentbar = currentbar + '▓'
-      }
-      document.getElementById('accelerationLvlbarCar' + car.asset_id).innerHTML = currentbar
+      //sessionStorage.setItem('pdata', JSON.stringify(updatedPlayerData));
 
-      currentbar = ''
-      for (let i = 0; i < car.lv_braking; i++) {
-        fillbraking--
-        currentbar = currentbar + '▓'
-      }
-      document.getElementById('brakingLvlbarCar' + car.asset_id).innerHTML = currentbar
+      //Replaces assets data
+      //const updatedAssetData = this.playerData.assetsContract.filter(a => a.asset_id !== carId)
+      //updatedAssetData.push(upgradedcar)
 
-      currentbar = ''
-      for (let i = 0; i < car.lv_balance; i++) {
-        fillbalance--
-        currentbar = currentbar + '▓'
-      }
-      document.getElementById('balanceLvlbarCar' + car.asset_id).innerHTML = currentbar
+      //const updatedPlayerData = this.playerData
+      //updatedPlayerData.assetsContract = updatedAssetData
+      //console.log('upgradedcar:' + JSON.stringify(upgradedcar))
 
-      // CARS BASE BAR POINTS
-      currentbar = ''
-      for (let i = 0; i < car.maxspeed; i++) {
-        fillmaxspeed--
-        currentbar = currentbar + '▓'
-      }
-      document.getElementById('maxspeedBasebarCar' + car.asset_id).innerHTML = currentbar
+      this.playerData = JSON.parse(sessionStorage.getItem('pdata'));
 
-      currentbar = ''
-      for (let i = 0; i < car.acceleration; i++) {
-        fillacceleration--
-        currentbar = currentbar + '▓'
-      }
-      document.getElementById('accelerationBasebarCar' + car.asset_id).innerHTML = currentbar
+      const upgradesContract = this.playerData.carupgradesContract.filter(carupgrade => carupgrade.upgrade_type === 'maxspeed');
+      const stakedUpgradeItems = this.playerData.assetsContract.filter(asset => asset.asset_type === 'carupgrade');
+      const stakedCars = this.playerData.assetsContract.filter(asset => asset.asset_type === 'car');
 
-      currentbar = ''
-      for (let i = 0; i < car.braking; i++) {
-        fillbraking--
-        currentbar = currentbar + '▓'
-      }
-      document.getElementById('brakingBasebarCar' + car.asset_id).innerHTML = currentbar
+      for (const car of stakedCars) {
 
-      currentbar = ''
-      for (let i = 0; i < car.balance; i++) {
-        fillbalance--
-        currentbar = currentbar + '▓'
-      }
-      document.getElementById('balanceBasebarCar' + car.asset_id).innerHTML = currentbar
+        let fillmaxspeed = 20
 
+        //console.log('car:' + JSON.stringify(car))
 
-      // CARS UPGRADES BAR POINTS
-      for (const upgrade of stakedUpgrades) {
+        let currentbar = ''
 
-        console.log('upgrade:' + JSON.stringify(upgrade))
+        // CARS UPGRADES BAR POINTS
+        for (const upgradedAtt of upgradesContract) {
+          fillmaxspeed--
+          currentbar = currentbar + '■'
+        }
+        console.log('currentbar:' + currentbar)
+        document.getElementById('maxspeedUpgbarCar' + car.asset_id).innerHTML = currentbar
 
-        if (upgrade.upgrade_target === car.asset_id) {
+        // CARS LEVEL BAR POINTS
+        currentbar = ''
+        for (let i = 0; i < car.lv_maxspeed; i++) {
+          fillmaxspeed--
+          currentbar = currentbar + '■'
+        }
+        document.getElementById('maxspeedLvlbarCar' + car.asset_id).innerHTML = currentbar
 
-          currentbar = ''
-          for (let i = 0; i < upgrade.maxspeed; i++) {
-            fillmaxspeed--
-            currentbar = currentbar + '▓'
+        // CARS BASE BAR POINTS
+        currentbar = ''
+        for (let i = 0; i < car.maxspeed; i++) {
+          fillmaxspeed--
+          currentbar = currentbar + '■'
+        }
+        document.getElementById('maxspeedBasebarCar' + car.asset_id).innerHTML = currentbar
+
+        // CARS UPGRADE ITEMS BAR POINTS
+        for (const upgradeItem of stakedUpgradeItems) {
+
+          //console.log('upgrade:' + JSON.stringify(upgrade))
+
+          if (upgradeItem.upgrade_target === car.asset_id) {
+
+            currentbar = ''
+            for (let i = 0; i < upgradeItem.maxspeed; i++) {
+              fillmaxspeed--
+              currentbar = currentbar + '■'
+            }
+            document.getElementById('maxspeedTunebarCar' + car.asset_id).innerHTML = currentbar
+
           }
-          document.getElementById('maxspeedTunebarCar' + car.asset_id).innerHTML = currentbar
-
-          currentbar = ''
-          for (let i = 0; i < upgrade.acceleration; i++) {
-            fillacceleration--
-            currentbar = currentbar + '▓'
-          }
-          document.getElementById('accelerationTunebarCar' + car.asset_id).innerHTML = currentbar
-
-          currentbar = ''
-          for (let i = 0; i < upgrade.braking; i++) {
-            fillbraking--
-            currentbar = currentbar + '▓'
-          }
-          document.getElementById('brakingTunebarCar' + car.asset_id).innerHTML = currentbar
-
-          currentbar = ''
-          for (let i = 0; i < upgrade.balance; i++) {
-            fillbalance--
-            currentbar = currentbar + '▓'
-          }
-          document.getElementById('balanceTunebarCar' + car.asset_id).innerHTML = currentbar
 
         }
 
+        // FILLS GREY BARS 
+        currentbar = ''
+        for (let i = 0; i < fillmaxspeed; i++) {
+          currentbar = currentbar + '■'
+        }
+        document.getElementById('fillmaxspeedCar' + car.asset_id).innerHTML = currentbar
+
       }
 
-      // FILLS GREY BARS 
-
-      currentbar = ''
-      for (let i = 0; i < fillmaxspeed; i++) {
-        currentbar = currentbar + '▓'
-      }
-      document.getElementById('fillmaxspeedCar' + car.asset_id).innerHTML = currentbar
-
-      currentbar = ''
-      for (let i = 0; i < fillacceleration; i++) {
-        currentbar = currentbar + '▓'
-      }
-      document.getElementById('fillaccelerationCar' + car.asset_id).innerHTML = currentbar
-
-      currentbar = ''
-      for (let i = 0; i < fillbraking; i++) {
-        currentbar = currentbar + '▓'
-      }
-      document.getElementById('fillbrakingCar' + car.asset_id).innerHTML = currentbar
-
-      currentbar = ''
-      for (let i = 0; i < fillbalance; i++) {
-        currentbar = currentbar + '▓'
-      }
-      document.getElementById('fillbalanceCar' + car.asset_id).innerHTML = currentbar
-
-    }
+    });
 
   }
 
-  upgradeMaxSpeed(): SafeHtml {
-    const carId = '2222222222222'
-    console.log('upgradeMaxSpeed')
-    this.playerData.assetsContract.filter(asset => asset.asset_id === carId).forEach(upgradedcar => {
-      console.log('upgradeMaxSpeed upgradedcar:' + upgradedcar)
-      return true;
-    });
+  upgradeAcceleration(points: number, carId: number) {
+
     this.playerData = JSON.parse(sessionStorage.getItem('pdata'));
-    this.playerAccount = JSON.stringify(this.playerData.pilotContract.account)
-    return true
+
+    console.log('upgradeAcceleration:' + JSON.stringify(this.playerData))
+
+    this.playerData.assetsContract.filter(asset => asset.asset_id === carId).forEach(upgradedcar => {
+      //console.log('upgradedcar.lv_acceleration:' +upgradedcar.lv_acceleration)
+      upgradedcar.lv_acceleration = upgradedcar.lv_acceleration + points
+
+      //Replaces assets data
+      const updatedAssetData = this.playerData.assetsContract.filter(a => a.asset_id !== carId)
+      updatedAssetData.push(upgradedcar)
+
+      const updatedPlayerData = this.playerData
+      updatedPlayerData.assetsContract = updatedAssetData
+      //console.log('upgradedcar:' + JSON.stringify(upgradedcar))
+      sessionStorage.setItem('pdata', JSON.stringify(updatedPlayerData));
+
+      this.playerData = JSON.parse(sessionStorage.getItem('pdata'));
+
+      const stakedUpgradeItems = this.playerData.assetsContract.filter(asset => asset.asset_type === 'carupgrade');
+      const stakedCars = this.playerData.assetsContract.filter(asset => asset.asset_type === 'car');
+
+      for (const car of stakedCars) {
+
+        let fillacceleration = 20
+
+        //console.log('car:' + JSON.stringify(car))
+
+        // CARS LEVEL BAR POINTS
+        let currentbar = ''
+        for (let i = 0; i < car.lv_acceleration; i++) {
+          fillacceleration--
+          currentbar = currentbar + '■'
+        }
+        document.getElementById('accelerationLvlbarCar' + car.asset_id).innerHTML = currentbar
+
+        // CARS BASE BAR POINTS
+        currentbar = ''
+        for (let i = 0; i < car.acceleration; i++) {
+          fillacceleration--
+          currentbar = currentbar + '■'
+        }
+        document.getElementById('accelerationBasebarCar' + car.asset_id).innerHTML = currentbar
+
+        // CARS UPGRADES BAR POINTS
+        for (const upgradeItem of stakedUpgradeItems) {
+
+          //console.log('upgrade:' + JSON.stringify(upgrade))
+
+          if (upgradeItem.upgrade_target === car.asset_id) {
+
+            currentbar = ''
+            for (let i = 0; i < upgradeItem.acceleration; i++) {
+              fillacceleration--
+              currentbar = currentbar + '■'
+            }
+            document.getElementById('accelerationTunebarCar' + car.asset_id).innerHTML = currentbar
+
+          }
+
+        }
+
+        // FILLS GREY BARS 
+        currentbar = ''
+        for (let i = 0; i < fillacceleration; i++) {
+          currentbar = currentbar + '■'
+        }
+        document.getElementById('fillaccelerationCar' + car.asset_id).innerHTML = currentbar
+
+      }
+
+    });
+
+  }
+
+  upgradeBraking(points: number, carId: number) {
+
+    this.playerData = JSON.parse(sessionStorage.getItem('pdata'));
+
+    console.log('upgradeBraking:' + JSON.stringify(this.playerData))
+
+    this.playerData.assetsContract.filter(asset => asset.asset_id === carId).forEach(upgradedcar => {
+      //console.log('upgradedcar.lv_maxspeed:' +upgradedcar.lv_maxspeed)
+      upgradedcar.lv_braking = upgradedcar.lv_braking + points
+
+      //Replaces assets data
+      const updatedAssetData = this.playerData.assetsContract.filter(a => a.asset_id !== carId)
+      updatedAssetData.push(upgradedcar)
+
+      const updatedPlayerData = this.playerData
+      updatedPlayerData.assetsContract = updatedAssetData
+      //console.log('upgradedcar:' + JSON.stringify(upgradedcar))
+      sessionStorage.setItem('pdata', JSON.stringify(updatedPlayerData));
+
+      this.playerData = JSON.parse(sessionStorage.getItem('pdata'));
+
+      const stakedUpgradeItems = this.playerData.assetsContract.filter(asset => asset.asset_type === 'carupgrade');
+      const stakedCars = this.playerData.assetsContract.filter(asset => asset.asset_type === 'car');
+
+      for (const car of stakedCars) {
+
+        let fillbraking = 20
+
+        //console.log('car:' + JSON.stringify(car))
+
+        // CARS LEVEL BAR POINTS
+        let currentbar = ''
+        for (let i = 0; i < car.lv_braking; i++) {
+          fillbraking--
+          currentbar = currentbar + '■'
+        }
+        document.getElementById('brakingLvlbarCar' + car.asset_id).innerHTML = currentbar
+
+        // CARS BASE BAR POINTS
+        currentbar = ''
+        for (let i = 0; i < car.braking; i++) {
+          fillbraking--
+          currentbar = currentbar + '■'
+        }
+        document.getElementById('brakingBasebarCar' + car.asset_id).innerHTML = currentbar
+
+        // CARS UPGRADES BAR POINTS
+        for (const upgradeItem of stakedUpgradeItems) {
+
+          //console.log('upgrade:' + JSON.stringify(upgrade))
+
+          if (upgradeItem.upgrade_target === car.asset_id) {
+
+            currentbar = ''
+            for (let i = 0; i < upgradeItem.braking; i++) {
+              fillbraking--
+              currentbar = currentbar + '■'
+            }
+            document.getElementById('brakingTunebarCar' + car.asset_id).innerHTML = currentbar
+
+          }
+
+        }
+
+        // FILLS GREY BARS
+        currentbar = ''
+        for (let i = 0; i < fillbraking; i++) {
+          currentbar = currentbar + '■'
+        }
+        document.getElementById('fillbrakingCar' + car.asset_id).innerHTML = currentbar
+
+      }
+
+    });
+
+  }
+
+  upgradeBalance(points: number, carId: number) {
+
+    this.playerData = JSON.parse(sessionStorage.getItem('pdata'));
+
+    console.log('upgradeBalance:' + JSON.stringify(this.playerData))
+
+    this.playerData.assetsContract.filter(asset => asset.asset_id === carId).forEach(upgradedcar => {
+      //console.log('upgradedcar.lv_balance:' +upgradedcar.lv_balance)
+      upgradedcar.lv_balance = upgradedcar.lv_balance + points
+
+      //Replaces assets data
+      const updatedAssetData = this.playerData.assetsContract.filter(a => a.asset_id !== carId)
+      updatedAssetData.push(upgradedcar)
+
+      const updatedPlayerData = this.playerData
+      updatedPlayerData.assetsContract = updatedAssetData
+      //console.log('upgradedcar:' + JSON.stringify(upgradedcar))
+      sessionStorage.setItem('pdata', JSON.stringify(updatedPlayerData));
+
+      this.playerData = JSON.parse(sessionStorage.getItem('pdata'));
+
+      const stakedUpgradeItems = this.playerData.assetsContract.filter(asset => asset.asset_type === 'carupgrade');
+      const stakedCars = this.playerData.assetsContract.filter(asset => asset.asset_type === 'car');
+
+      for (const car of stakedCars) {
+
+        let fillbalance = 20
+
+        //console.log('car:' + JSON.stringify(car))
+
+        // CARS LEVEL BAR POINTS
+        let currentbar = ''
+        for (let i = 0; i < car.lv_balance; i++) {
+          fillbalance--
+          currentbar = currentbar + '■'
+        }
+        document.getElementById('balanceLvlbarCar' + car.asset_id).innerHTML = currentbar
+
+        // CARS BASE BAR POINTS
+        currentbar = ''
+        for (let i = 0; i < car.balance; i++) {
+          fillbalance--
+          currentbar = currentbar + '■'
+        }
+        document.getElementById('balanceBasebarCar' + car.asset_id).innerHTML = currentbar
+
+        // CARS UPGRADES BAR POINTS
+        for (const upgradeItem of stakedUpgradeItems) {
+
+          //console.log('upgrade:' + JSON.stringify(upgrade))
+
+          if (upgradeItem.upgrade_target === car.asset_id) {
+
+            currentbar = ''
+            for (let i = 0; i < upgradeItem.balance; i++) {
+              fillbalance--
+              currentbar = currentbar + '■'
+            }
+            document.getElementById('balanceTunebarCar' + car.asset_id).innerHTML = currentbar
+
+          }
+
+        }
+
+        // FILLS GREY BARS 
+        currentbar = ''
+        for (let i = 0; i < fillbalance; i++) {
+          currentbar = currentbar + '■'
+        }
+        document.getElementById('fillbalanceCar' + car.asset_id).innerHTML = currentbar
+
+      }
+
+    });
+
   }
 
   ngOnInit() {
     console.log('garage ngOnInit()')
 
-    document.getElementById('btupgrademaxspeed').addEventListener('click', this.upgradeMaxSpeed, false);
+    //document.getElementById('btupgrademaxspeed').addEventListener('click', this.upgradeMaxSpeed, false);
 
-    this.updateCarsBars()
+    //this.updateCarsBars()
+    this.upgradeMaxSpeed(0, 2222222222222)
+    this.upgradeAcceleration(0, 2222222222222)
+    this.upgradeBraking(0, 2222222222222)
+    this.upgradeBalance(0, 2222222222222)
+
 
     const isLoggedIn = sessionStorage.getItem('isLoggedIn') != null
     if (!isLoggedIn) this.router.navigate(['/login'])

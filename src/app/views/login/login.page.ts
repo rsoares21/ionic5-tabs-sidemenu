@@ -72,15 +72,16 @@ export class LoginPage implements OnInit {
       const config = { paused: false }
       const pilotContract = { id: 1111111111111, account: 'rizzlesizzle', trophies: 200, tyres: 200, fuel: 200 }
 
-      const assetsContract = [  // scoped to rizzlesizzle
+      const assetsContract = [  // scopped to user
         { asset_id: 2222222222222, template_id: 3333333333333, upgrade_target: 0, asset_type: 'car', maxspeed: 1, acceleration: 2, braking: 3, balance: 4, lv_maxspeed: 2, lv_acceleration: 1, lv_braking: 1, lv_balance: 2, condition: 9, staketime: 1663785879 }, //car1
         { asset_id: 2222222222223, template_id: 3333333333334, upgrade_target: 2222222222222, asset_type: 'carupgrade', maxspeed: 4, acceleration: 3, braking: 2, balance: 1, condition: 100, staketime: 1663785879 }  //nft upgrade
       ]
 
-      const pdata = { pilotContract: null, assetsContract: null}
+      const carupgradesContract = [ // scopped to user
+        
+      ]
 
-      pdata.pilotContract = pilotContract
-      pdata.assetsContract = assetsContract
+      const pdata = { pilotContract, assetsContract , carupgradesContract}
 
       //pdata = { id: 1, account: session.auth, trophies: 100, tyres: 50, fuel: 200 }
       sessionStorage.setItem('pdata', JSON.stringify(pdata));
