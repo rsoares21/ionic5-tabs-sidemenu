@@ -43,23 +43,30 @@
                 <span style="color:gold;font-size: 10px;" id="carstatus">{{ this.state.carStatus}} </span><br>
             </ion-card-subtitle>
 
-            <ion-card id="raceprogressbar" style="background-color: goldenrod; padding: 0px; margin: 0px; height: 3px; margin-top: 5px; width: 100%;">
-                <span style="display: flex; justify-content: center; color:black; ">
-              </span>
+        </ion-card-header>
+        <ion-card-content style="margin:0px;padding: 0px; top: 0px;">
+
+            <ion-card id="raceprogressbar" style="background-color: goldenrod; padding: 0px; margin: 0px; height: 3px; margin-top: 0px; width: 100%;">
+                <span style="display: flex; justify-content: center; color:black; margin:0px"></span>
             </ion-card>
 
             <center>
                 <ion-card style="background-color: lime; width: 330px; margin-top: 5px; padding: 0px;" (click)="this.afterClickPlacedPosition()">
                     <span id="instantracelog" style="justify-content: center; color:black;font-family: Consolas; font-size: 20px;">
-                    
                 </span>
                 </ion-card>
             </center>
 
+            <div style="width: 99%; margin: 2px; padding: 0px;text-align: left;">
+                <span id="installedUpgrades" style="color:black;font-family: Consolas; font-size: 20px;margin: 3px;">
+                        <img src="../../../../assets/nft_engine_rare.png" width="18px" height="18px" >
+                </span>
+                <span id="installedUpgrades" style="color:black;font-family: Consolas; font-size: 20px;margin: 3px;">
+                    <img src="../../../../assets/nft_braking_common.png" width="18px" height="18px" >
+                </span>
+            </div>
 
-        </ion-card-header>
-        <ion-card-content style="margin:0px;padding: 0px; top: 0px;">
-            <table style="margin:0px;padding: 0px; top: 0px; font-family: Consolas; font-size: 10px; margin: 2px; border-color: yellow;" border="0" width="99%">
+            <table style="padding: 0px; top: 0px; font-family: Consolas; font-size: 10px; margin: 2px; border-color: yellow;" border="0" width="99%">
                 <tr>
                     <td rowspan="6" width="130" style="text-align: right; padding-right: 5px;">
                         <div id="garagecar1" (click)="carlights()">
@@ -71,7 +78,7 @@
                     <td width="72px" style="color: darkgrey;">
                         Max Speed
                     </td>
-                    <td width="80px" style="color: grey;padding-left: 3px;"><span id="maxspeedUpgbarCar2222222222222" style="color:aqua"></span><span id="maxspeedLvlbarCar2222222222222" style="color:white"></span><span id="maxspeedBasebarCar2222222222222" style="color:rgb(255, 200, 98)"></span><span id="maxspeedTunebarCar2222222222222"
+                    <td width="80px" style="color: grey;padding-left: 3px;"><span id="maxspeedUpgbarCar2222222222222" style="color:deeppink"></span><span id="maxspeedLvlbarCar2222222222222" style="color:white"></span><span id="maxspeedBasebarCar2222222222222" style="color:rgb(255, 200, 98)"></span><span id="maxspeedTunebarCar2222222222222"
                             style="color:orange"></span>
                         <span id="fillmaxspeedCar2222222222222" style="color:dimgrey"></span></td>
                     <td width="50px" style="text-align: left;padding-left: 5px;;color:darkgrey">Lv 2</td>
@@ -80,7 +87,7 @@
                     <td style="color: darkgrey">
                         Acceleration
                     </td>
-                    <td width="80px" style="color: white;padding-left: 3px;"><span id="accelerationUpgbarCar2222222222222" style="color:aqua"></span><span id="accelerationLvlbarCar2222222222222" style="color:white"></span><span id="accelerationBasebarCar2222222222222" style="color:yellow"></span><span id="accelerationTunebarCar2222222222222"
+                    <td width="80px" style="color: white;padding-left: 3px;"><span id="accelerationUpgbarCar2222222222222" style="color:deeppink"></span><span id="accelerationLvlbarCar2222222222222" style="color:white"></span><span id="accelerationBasebarCar2222222222222" style="color:yellow"></span><span id="accelerationTunebarCar2222222222222"
                             style="color:gold"></span>
                         <span id="fillaccelerationCar2222222222222" style="color:dimgrey"></span></td>
                     <td width="50px" style="text-align: left;padding-left: 5px;;color:darkgrey">Lv 0</td>
@@ -89,7 +96,7 @@
                     <td style="color: darkgrey">
                         Braking
                     </td>
-                    <td width="80px" style="color: white;padding-left: 3px;"><span id="brakingUpgbarCar2222222222222" style="color:aqua"></span><span id="brakingLvlbarCar2222222222222" style="color:white"></span><span id="brakingBasebarCar2222222222222" style="color:red"></span><span id="brakingTunebarCar2222222222222"
+                    <td width="80px" style="color: white;padding-left: 3px;"><span id="brakingUpgbarCar2222222222222" style="color:deeppink"></span><span id="brakingLvlbarCar2222222222222" style="color:white"></span><span id="brakingBasebarCar2222222222222" style="color:red"></span><span id="brakingTunebarCar2222222222222"
                             style="color:firebrick"></span>
                         <span id="fillbrakingCar2222222222222" style="color:dimgrey"></span></td>
                     <td width="50px" style="text-align: left;padding-left: 5px;;color:darkgrey">Lv 1</td>
@@ -98,7 +105,7 @@
                     <td style="color: darkgrey">
                         Balance
                     </td>
-                    <td width="80px" style="color: white;padding-left: 3px;"><span id="balanceUpgbarCar2222222222222" style="color:aqua"></span><span id="balanceLvlbarCar2222222222222" style="color:white"></span><span id="balanceBasebarCar2222222222222" style="color:greenyellow"></span><span id="balanceTunebarCar2222222222222"
+                    <td width="80px" style="color: white;padding-left: 3px;"><span id="balanceUpgbarCar2222222222222" style="color:deeppink"></span><span id="balanceLvlbarCar2222222222222" style="color:white"></span><span id="balanceBasebarCar2222222222222" style="color:greenyellow"></span><span id="balanceTunebarCar2222222222222"
                             style="color:lime"></span>
                         <span id="fillbalanceCar2222222222222" style="color:dimgrey"></span>
                     </td>
@@ -109,19 +116,24 @@
                     <td style="color:darkgrey" id="carconditiontitle">
                         Condition
                     </td>
-                    <td width="80px" style="padding-left: 3px;" id="carcondition"><span style="color: greenyellow;">▓▓</span><span style="color:dimgray">▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span><span style="color:darkred">▓</span></td>
+                    <td width="80px" style="padding-left: 3px;" id="carcondition"><span style="color: greenyellow;">■■</span><span style="color:dimgray">■■■■■■■■■■■■■■■■■</span><span style="color:darkred">■</span></td>
                     <td>&nbsp;<span style="color:goldenrod;padding-left: 5px;" (click)="showConditionHelp()"> <b>?</b> </span></td>
                 </tr>
 
             </table>
-            <span style="color:dimgray;font-size: 10px; margin-left: 5px;">RANK: </span>
-            <span style="color:white;font-size: 10px;">15th </span>
+            <span style="color:gold;font-size: 10px; margin-left: 5px;">CIRCUIT: </span>
+            <span style="color:darkgoldenrod;font-size: 10px;">#1</span>
+            <span style="color:gold;font-size: 10px; margin-left: 5px;">&nbsp;&nbsp;BEST LAP: </span>
+            <span style="color:darkgoldenrod;font-size: 10px;">2:04:31 </span>
+            <span style="color:gold;font-size: 10px; margin-left: 5px;">&nbsp;&nbsp;RANK: </span>
+            <span style="color:darkgoldenrod;font-size: 10px;">15th </span>
+
 
             <center>
                 <div id="car1SubMenuTitleBar" style="background-color:gold;border-radius: 5px 5px 0px 0px;color:orangered;font-family: RacingSansOne; font-size: 14px;;margin:0px;padding:0px"></div>
             </center>
 
-            <div id="tuningwindow" style="background-color: red; margin-top: 5px; margin: 0px;padding: 0px;overflow-x: scroll;letter-spacing: 2px; height:0px">
+            <div id="tuningwindow" style="background-color: black; margin-top: 5px; margin: 0px;padding: 0px;overflow-x: scroll;letter-spacing: 2px; height:0px">
                 <span id="tuningsection" style="font-size: 14px;">
 
                     <div style="display: flex; width:800px; margin-top:6px">

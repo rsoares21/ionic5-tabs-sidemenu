@@ -298,39 +298,26 @@ export class GaragePage implements OnInit {
     console.log('upgradeMaxSpeed:' + JSON.stringify(this.playerData))
 
     this.playerData.assetsContract.filter(asset => asset.asset_id === carId).forEach(upgradedcar => {
-      //console.log('upgradedcar.lv_maxspeed:' +upgradedcar.lv_maxspeed)
-
-      // AFTER SUCCESS API RESPONSE
-      //upgradedcar.lv_maxspeed = upgradedcar.lv_maxspeed + points
-
-      const updatedAssetData = this.playerData.carupgradesContract.filter(carupgrade => carupgrade.upgrade_type !== 'maxspeed' && carupgrade.car_id !== carId)
 
       // Limits upgrades one at a time
       if (points > 0) {
 
-        if (updatedAssetData.length !== this.playerData.carupgradesContract.length) {
+        const isalreadyupdating = this.playerData.carupgradesContract.filter(carupgrade => carupgrade.upgrade_type === 'maxspeed' && carupgrade.car_id === carId).length > 0
+
+        if (isalreadyupdating) {
           alert('maxspeed already upgrading')
           return
         }
 
         // transact
         const carupgradeContract = { id: 1, car_id: 2222222222222, upgrade_type: 'maxspeed', upgraded_at: 1670183165 }
+        const updatedAssetData = this.playerData.carupgradesContract.filter(carupgrade => carupgrade.upgrade_type !== 'maxspeed' && carupgrade.car_id === carId)
         updatedAssetData.push(carupgradeContract)
         const updatedPlayerData = this.playerData
         updatedPlayerData.carupgradesContract = updatedAssetData
         sessionStorage.setItem('pdata', JSON.stringify(updatedPlayerData));
 
       }
-
-      //sessionStorage.setItem('pdata', JSON.stringify(updatedPlayerData));
-
-      //Replaces assets data
-      //const updatedAssetData = this.playerData.assetsContract.filter(a => a.asset_id !== carId)
-      //updatedAssetData.push(upgradedcar)
-
-      //const updatedPlayerData = this.playerData
-      //updatedPlayerData.assetsContract = updatedAssetData
-      //console.log('upgradedcar:' + JSON.stringify(upgradedcar))
 
       this.playerData = JSON.parse(sessionStorage.getItem('pdata'));
 
@@ -408,20 +395,31 @@ export class GaragePage implements OnInit {
     console.log('upgradeAcceleration:' + JSON.stringify(this.playerData))
 
     this.playerData.assetsContract.filter(asset => asset.asset_id === carId).forEach(upgradedcar => {
-      //console.log('upgradedcar.lv_acceleration:' +upgradedcar.lv_acceleration)
-      upgradedcar.lv_acceleration = upgradedcar.lv_acceleration + points
 
-      //Replaces assets data
-      const updatedAssetData = this.playerData.assetsContract.filter(a => a.asset_id !== carId)
-      updatedAssetData.push(upgradedcar)
+      // Limits upgrades one at a time
+      if (points > 0) {
 
-      const updatedPlayerData = this.playerData
-      updatedPlayerData.assetsContract = updatedAssetData
-      //console.log('upgradedcar:' + JSON.stringify(upgradedcar))
-      sessionStorage.setItem('pdata', JSON.stringify(updatedPlayerData));
+        const isalreadyupdating = this.playerData.carupgradesContract.filter(carupgrade => carupgrade.upgrade_type === 'acceleration' && carupgrade.car_id === carId).length > 0
+
+        if (isalreadyupdating) {
+          alert('acceleration already upgrading')
+          return
+        }
+
+        // transact
+        const carupgradeContract = { id: 2, car_id: 2222222222222, upgrade_type: 'acceleration', upgraded_at: 1670183165 }
+        const updatedAssetData = this.playerData.carupgradesContract.filter(carupgrade => carupgrade.upgrade_type !== 'acceleration' && carupgrade.car_id === carId)
+        console.log('updatedAssetData:'+JSON.stringify(updatedAssetData))
+        updatedAssetData.push(carupgradeContract)
+        const updatedPlayerData = this.playerData
+        updatedPlayerData.carupgradesContract = updatedAssetData
+        sessionStorage.setItem('pdata', JSON.stringify(updatedPlayerData));
+
+      }
 
       this.playerData = JSON.parse(sessionStorage.getItem('pdata'));
 
+      const upgradesContract = this.playerData.carupgradesContract.filter(carupgrade => carupgrade.upgrade_type === 'acceleration');
       const stakedUpgradeItems = this.playerData.assetsContract.filter(asset => asset.asset_type === 'carupgrade');
       const stakedCars = this.playerData.assetsContract.filter(asset => asset.asset_type === 'car');
 
@@ -431,8 +429,18 @@ export class GaragePage implements OnInit {
 
         //console.log('car:' + JSON.stringify(car))
 
-        // CARS LEVEL BAR POINTS
         let currentbar = ''
+
+        // CARS UPGRADES BAR POINTS
+        for (const upgradedAtt of upgradesContract) {
+          fillacceleration--
+          currentbar = currentbar + '■'
+        }
+        console.log('currentbar:' + currentbar)
+        document.getElementById('accelerationUpgbarCar' + car.asset_id).innerHTML = currentbar
+
+        // CARS LEVEL BAR POINTS
+        currentbar = ''
         for (let i = 0; i < car.lv_acceleration; i++) {
           fillacceleration--
           currentbar = currentbar + '■'
@@ -447,7 +455,7 @@ export class GaragePage implements OnInit {
         }
         document.getElementById('accelerationBasebarCar' + car.asset_id).innerHTML = currentbar
 
-        // CARS UPGRADES BAR POINTS
+        // CARS UPGRADE ITEMS BAR POINTS
         for (const upgradeItem of stakedUpgradeItems) {
 
           //console.log('upgrade:' + JSON.stringify(upgrade))
