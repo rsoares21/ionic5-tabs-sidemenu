@@ -17,8 +17,9 @@ export class GaragePage implements OnInit {
   playerData;
   playerAccount;
   startRaceButtonCollor = 'lime';
-  repairButtonCollor = 'orange-black';
-  equipButtonCollor = 'orange-black';
+  repairButtonCollor = 'medium';
+  equipButtonCollor = 'medium';
+  upgradeButtonCollor = 'medium';
   state;
   constants;
   upgradingsectionHTML = '';
@@ -131,18 +132,19 @@ export class GaragePage implements OnInit {
       document.getElementById('tuningwindow').style.animationDuration = '1s';
 
       this.state.isTuningWindowOpen = true
+      this.equipButtonCollor = 'yellow'
 
     }
 
   }
 
   async repairCar() {
-    const pausedelay = 300
+    const pausedelay = 6000
     document.getElementById('carstatus').innerHTML = 'Repairing'
     document.getElementById('carstatus').style.color = 'yellow'
 
-    this.repairButtonCollor = 'medium'
-    this.startRaceButtonCollor = 'medium'
+    this.repairButtonCollor = 'orange-black'
+    this.startRaceButtonCollor = 'danger-black'
     document.getElementById('carconditiontitle').style.color = 'lime'
     await new Promise(r => setTimeout(r, pausedelay));
     document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">■■</span><span style="color:dimgray">■■■■■■■■■■■■■■■■■</span><span style="color:darkred">■</span>'
@@ -181,17 +183,14 @@ export class GaragePage implements OnInit {
     await new Promise(r => setTimeout(r, pausedelay));
     document.getElementById('carcondition').innerHTML = '<span style="color: greenyellow;">■■■■■■■■■■■■■■■■■■■</span><span style="color:dimgray"></span><span style="color:darkred">■</span>'
 
-
-
-
     document.getElementById('carstatus').style.color = 'gold'
     document.getElementById('carstatus').innerHTML = this.state.carStatus
 
 
     document.getElementById('carconditiontitle').style.color = 'darkgrey'
-    this.repairButtonCollor = 'orange-black'
+    this.repairButtonCollor = 'medium'
     console.log('b')
-    this.startRaceButtonCollor = 'lime'
+    this.startRaceButtonCollor = 'medium'
   }
 
   carlights() {
@@ -206,9 +205,10 @@ export class GaragePage implements OnInit {
   async startRace() {
 
     console.log('c')
-    this.startRaceButtonCollor = 'medium'
-    this.repairButtonCollor = 'medium'
-    this.equipButtonCollor = 'medium'
+    this.startRaceButtonCollor = 'lime'
+    this.repairButtonCollor = 'dimgrey'
+    this.equipButtonCollor = 'dimgrey'
+    this.upgradeButtonCollor = 'dimgrey'
 
     document.getElementById('carstatus').style.color = 'lime'
 
@@ -285,9 +285,9 @@ export class GaragePage implements OnInit {
 
     document.getElementById('buttonStartRace').style.color = 'lime'
     console.log('d')
-    this.startRaceButtonCollor = 'lime'
-    this.repairButtonCollor = 'orange-black'
-    this.equipButtonCollor = 'orange-black'
+    this.startRaceButtonCollor = 'medium'
+    this.repairButtonCollor = 'medium'
+    this.equipButtonCollor = 'medium'
 
   }
 
